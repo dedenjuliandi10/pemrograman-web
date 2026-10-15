@@ -1,0 +1,3643 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML, CSS & JavaScript Dasar - Media Pembelajaran Informatika SMP/MTs</title>
+  
+  <!-- Google Fonts: Poppins (Judul), Nunito (Teks Bacaan), JetBrains Mono (Kode) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Nunito:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- File CSS Eksternal Wajib -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER & NAVBAR (6 MENU UTAMA + INDIKATOR PROGRES)
+       ======================================================================== -->
+  <header class="app-header">
+    <div class="header-container">
+      
+      <!-- Brand Logo -->
+      <div class="brand-logo" id="brandLogo" onclick="navigateTo('beranda')">
+        <div class="logo-badges">
+          <span class="badge-tag html-badge">&lt;/&gt;</span>
+          <span class="badge-tag css-badge">{ }</span>
+          <span class="badge-tag js-badge">(JS)</span>
+        </div>
+        <div class="brand-info">
+          <span class="brand-subject">Informatika SMP/MTs</span>
+          <span class="brand-title">HTML, CSS &amp; JS Dasar</span>
+        </div>
+      </div>
+
+      <!-- Progres Belajar di Header -->
+      <div class="header-progress-box" title="Persentase penyelesaian materi dan aktivitas">
+        <div class="progress-info-row">
+          <span class="progress-title">📊 Progres Belajar</span>
+          <span class="progress-percent" id="globalProgressPercent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="globalProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Tombol Hamburger Mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu Navigasi" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- 6 MENU UTAMA (WAJIB SINGLE-PAGE) -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li>
+            <button class="nav-btn active" data-section="beranda" onclick="navigateTo('beranda')">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-label">Beranda</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="materi" onclick="navigateTo('materi')">
+              <span class="nav-icon">📚</span>
+              <span class="nav-label">Materi</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="html-css" onclick="navigateTo('html-css')">
+              <span class="nav-icon">🧪</span>
+              <span class="nav-label">Web Lab</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="editor" onclick="navigateTo('editor')">
+              <span class="nav-icon">💻</span>
+              <span class="nav-label">Editor Kode</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="aktivitas" onclick="navigateTo('aktivitas')">
+              <span class="nav-icon">🎮</span>
+              <span class="nav-label">Aktivitas</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="kuis" onclick="navigateTo('kuis')">
+              <span class="nav-icon">📝</span>
+              <span class="nav-label">Kuis</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-btn" data-section="rangkuman" onclick="navigateTo('rangkuman')">
+              <span class="nav-icon">💡</span>
+              <span class="nav-label">Rangkuman</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       KONTEN UTAMA APLIKASI
+       ======================================================================== -->
+  <main class="app-main">
+
+    <!-- ======================================================================
+         SECTION 1: BERANDA
+         ====================================================================== -->
+    <section id="beranda" class="page-section active">
+      <div class="container">
+        
+        <!-- Hero Card -->
+        <div class="hero-card">
+          <div class="hero-text-col">
+            <div class="hero-pill">
+              <span class="pulse-dot"></span>
+              Informatika • Kelas VIII & IX SMP/MTs
+            </div>
+            <h1 class="hero-title">HTML, CSS dan JavaScript Dasar</h1>
+            <p class="hero-subtitle">
+              “Belajar membuat halaman web sederhana dan interaktif dari dasar.”
+            </p>
+            <p class="hero-desc">
+              Pelajari bagaimana trio teknologi web bekerja bersama: <strong>HTML</strong> menyusun kerangka isi dokumen, <strong>CSS</strong> memperindah tampilan dan warna, serta <strong>JavaScript</strong> memberikan aksi dan interaksi yang membuat website menjadi hidup!
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="navigateTo('materi')">
+                <span>🚀 Mulai Belajar</span>
+              </button>
+              <button class="btn btn-secondary" onclick="navigateTo('aktivitas')">
+                <span>🎮 Coba Aktivitas Seru</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-graphic-col">
+            <div class="illustration-wrapper">
+              <svg viewBox="0 0 480 380" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e293b"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                  </linearGradient>
+                  <linearGradient id="deskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#e2e8f0"/>
+                    <stop offset="100%" stop-color="#cbd5e1"/>
+                  </linearGradient>
+                  <linearGradient id="htmlTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f97316"/>
+                    <stop offset="100%" stop-color="#ea580c"/>
+                  </linearGradient>
+                  <linearGradient id="cssTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#1d4ed8"/>
+                  </linearGradient>
+                  <linearGradient id="jsTagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f59e0b"/>
+                    <stop offset="100%" stop-color="#d97706"/>
+                  </linearGradient>
+                </defs>
+                
+                <!-- Meja Komputer -->
+                <rect x="40" y="290" width="400" height="20" rx="8" fill="url(#deskGrad)" />
+                <rect x="70" y="310" width="16" height="50" rx="4" fill="#94a3b8" />
+                <rect x="394" y="310" width="16" height="50" rx="4" fill="#94a3b8" />
+                
+                <!-- Laptop -->
+                <rect x="130" y="100" width="220" height="150" rx="10" fill="#334155" />
+                <rect x="140" y="110" width="200" height="130" rx="6" fill="url(#screenGrad)" />
+                
+                <!-- Sisi Kiri Layar: Kode -->
+                <rect x="148" y="118" width="88" height="114" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+                <text x="154" y="130" fill="#f97316" font-size="7" font-family="monospace">&lt;h1&gt;Halo&lt;/h1&gt;</text>
+                <text x="154" y="142" fill="#38bdf8" font-size="7" font-family="monospace">color: blue;</text>
+                <text x="154" y="154" fill="#f59e0b" font-size="7" font-family="monospace">let nama = "Andi";</text>
+                <text x="154" y="166" fill="#a855f7" font-size="7" font-family="monospace">if (nilai &gt;= 75) {</text>
+                <text x="154" y="178" fill="#10b981" font-size="7" font-family="monospace">  console.log("Lulus");</text>
+                <text x="154" y="190" fill="#a855f7" font-size="7" font-family="monospace">}</text>
+
+                <!-- Sisi Kanan Layar: Web Preview -->
+                <rect x="242" y="118" width="90" height="114" rx="4" fill="#ffffff" />
+                <rect x="246" y="122" width="82" height="14" rx="2" fill="#2563eb" />
+                <text x="250" y="132" fill="#ffffff" font-size="8" font-weight="bold">Web Siswa</text>
+                <circle cx="260" cy="150" r="10" fill="#fbcfe8" />
+                <rect x="276" y="144" width="46" height="5" rx="2" fill="#94a3b8" />
+                <rect x="276" y="152" width="34" height="4" rx="2" fill="#cbd5e1" />
+                <rect x="248" y="168" width="78" height="56" rx="3" fill="#ecfdf5" stroke="#a7f3d0"/>
+                <text x="252" y="180" fill="#15803d" font-size="6">Nama: Andi 👨‍🎓</text>
+                <text x="252" y="192" fill="#15803d" font-size="6">Status: LULUS! ✨</text>
+                
+                <!-- Engsel & Keyboard -->
+                <path d="M120 250 L360 250 L380 290 L100 290 Z" fill="#64748b" />
+                <rect x="170" y="255" width="140" height="24" rx="4" fill="#475569" />
+                <rect x="210" y="282" width="60" height="5" rx="2" fill="#94a3b8" />
+                
+                <!-- Buku & Gelas -->
+                <rect x="70" y="270" width="45" height="20" rx="3" fill="#3b82f6" />
+                <rect x="74" y="260" width="40" height="10" rx="2" fill="#10b981" />
+                <path d="M375 270 L395 270 L392 290 L378 290 Z" fill="#f59e0b" />
+                
+                <!-- Floating Badges Edukasi (HTML, CSS, JS) -->
+                <g class="float-badge-1">
+                  <rect x="50" y="80" width="68" height="28" rx="14" fill="url(#htmlTagGrad)" />
+                  <text x="84" y="98" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">&lt;html&gt;</text>
+                </g>
+                <g class="float-badge-2">
+                  <rect x="360" y="65" width="68" height="28" rx="14" fill="url(#cssTagGrad)" />
+                  <text x="394" y="83" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">{ CSS }</text>
+                </g>
+                <g class="float-badge-3">
+                  <rect x="350" y="140" width="76" height="28" rx="14" fill="url(#jsTagGrad)" />
+                  <text x="388" y="158" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">JS: if ( )</text>
+                </g>
+                <g class="float-badge-4">
+                  <rect x="65" y="160" width="60" height="26" rx="13" fill="#10b981" />
+                  <text x="95" y="177" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">log() ⚡</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 KARTU PENGANTAR (HTML, CSS, JS, PRAKTIK) -->
+        <div class="section-heading-box">
+          <h2 class="section-title">Kenali 3 Teknologi Inti Pembuatan Web</h2>
+          <p class="section-subtitle">Tiga pilar dasar yang menyusun setiap website modern yang kamu kunjungi.</p>
+        </div>
+
+        <div class="cards-grid-4">
+          <!-- Kartu 1: Mengenal HTML -->
+          <div class="intro-card html-theme-border">
+            <div class="intro-card-icon html-icon-bg">🌐</div>
+            <div class="intro-badge html-badge-soft">STRUKTUR</div>
+            <h3 class="intro-card-title">HTML</h3>
+            <p class="intro-card-desc">“Membuat struktur dan isi halaman web.”</p>
+            <p class="intro-card-detail">
+              HTML menyusun kerangka dokumen web seperti judul, paragraf, gambar, daftar, dan tabel.
+            </p>
+            <button class="card-btn html-card-btn" onclick="openMateriSub('materi-a')">
+              Pelajari HTML &rarr;
+            </button>
+          </div>
+
+          <!-- Kartu 2: Mengenal CSS -->
+          <div class="intro-card css-theme-border">
+            <div class="intro-card-icon css-icon-bg">🎨</div>
+            <div class="intro-badge css-badge-soft">TAMPILAN</div>
+            <h3 class="intro-card-title">CSS</h3>
+            <p class="intro-card-desc">“Memperindah tampilan dan warna web.”</p>
+            <p class="intro-card-detail">
+              CSS mengatur warna teks, background, ukuran huruf, border, serta kerapian jarak margin dan padding.
+            </p>
+            <button class="card-btn css-card-btn" onclick="openMateriSub('materi-d')">
+              Pelajari CSS &rarr;
+            </button>
+          </div>
+
+          <!-- Kartu 3: Mengenal JavaScript -->
+          <div class="intro-card js-theme-border">
+            <div class="intro-card-icon js-icon-bg">⚡</div>
+            <div class="intro-badge js-badge-soft">INTERAKSI</div>
+            <h3 class="intro-card-title">JAVASCRIPT</h3>
+            <p class="intro-card-desc">“Memberi aksi dan logika interaktif.”</p>
+            <p class="intro-card-detail">
+              JavaScript menyimpan data variabel, menampilkan pesan di console, meminta input prompt, dan membuat keputusan dengan percabangan if.
+            </p>
+            <button class="card-btn js-card-btn" onclick="openMateriSub('materi-g')">
+              Pelajari JS Dasar &rarr;
+            </button>
+          </div>
+
+          <!-- Kartu 4: Praktik Coding -->
+          <div class="intro-card code-theme-border">
+            <div class="intro-card-icon code-icon-bg">💻</div>
+            <div class="intro-badge code-badge-soft">PRAKTIK</div>
+            <h3 class="intro-card-title">PRAKTIK</h3>
+            <p class="intro-card-desc">“Mencoba membuat web sederhana.”</p>
+            <p class="intro-card-detail">
+              Uji pemahamanmu lewat simulator interaktif, permainan menjodohkan kode, kuis, dan mini project profil siswa!
+            </p>
+            <div class="card-btn-duo">
+              <button class="card-btn code-card-btn" onclick="navigateTo('editor')">
+                Editor Kode 💻
+              </button>
+              <button class="card-btn sub-card-btn" onclick="navigateTo('aktivitas')">
+                Aktivitas 🎮
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TUJUAN PEMBELAJARAN (SESUAI SPESIFIKASI) -->
+        <div class="learning-goals-card">
+          <div class="goals-header">
+            <span class="goals-icon">🎯</span>
+            <div>
+              <h3 class="goals-title">Tujuan Pembelajaran</h3>
+              <p class="goals-subtitle">Setelah menggunakan website ini, kamu diharapkan mampu:</p>
+            </div>
+          </div>
+          <div class="goals-grid">
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Mengenal pengertian dan fungsi dasar HTML, CSS, serta JavaScript.</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Memahami struktur dokumen HTML dan membuat elemen sederhana (heading, teks, link, gambar, list, tabel).</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Mengatur tampilan web dengan CSS (warna, background, font-size, border, margin, dan padding).</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Mengenal penulisan variabel (<code>let</code>) dalam JavaScript untuk menyimpan data.</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Menggunakan fungsi <code>console.log()</code> untuk menampilkan pesan dan <code>prompt()</code> untuk meminta masukan.</span>
+            </div>
+            <div class="goal-item">
+              <span class="goal-check">✓</span>
+              <span class="goal-text">Menerapkan percabangan <code>if</code> sederhana untuk mengambil keputusan logis pada web.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Start Banner -->
+        <div class="quick-start-banner">
+          <div class="quick-banner-content">
+            <h4>Siap Menjadi Pembuat Halaman Web Interaktif? 🚀</h4>
+            <p>Mulai langkah belajarmu dari materi HTML, lanjutkan ke CSS, dan lengkapi aksinya dengan JavaScript!</p>
+          </div>
+          <button class="btn btn-primary-white" onclick="navigateTo('materi')">
+            Buka Materi Pelajaran 📚
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 2: MATERI PEMBELAJARAN
+         ====================================================================== -->
+    <section id="materi" class="page-section">
+      <div class="container">
+        
+        <div class="section-heading-box">
+          <div class="section-pill">📚 Modul Belajar</div>
+          <h2 class="section-title">Materi Pembelajaran</h2>
+          <p class="section-subtitle">
+            Klik topik di bawah ini untuk mempelajari konsep HTML, CSS, dan JavaScript secara terstruktur dan mudah dipahami.
+          </p>
+        </div>
+
+        <!-- Sub-Menu Navigasi Materi (A s/d G) -->
+        <div class="materi-tabs-nav">
+          <button class="materi-tab-btn active" onclick="switchMateriTab('materi-a')">
+            <span class="tab-badge">A</span> Mengenal HTML
+          </button>
+          <button class="materi-tab-btn" onclick="switchMateriTab('materi-b')">
+            <span class="tab-badge">B</span> Struktur Dasar HTML
+          </button>
+          <button class="materi-tab-btn" onclick="switchMateriTab('materi-c')">
+            <span class="tab-badge">C</span> Elemen HTML Dasar
+          </button>
+          <button class="materi-tab-btn" onclick="switchMateriTab('materi-d')">
+            <span class="tab-badge">D</span> Mengenal &amp; 3 Cara Pakai CSS
+          </button>
+          <button class="materi-tab-btn" onclick="switchMateriTab('materi-e')">
+            <span class="tab-badge">E</span> Properti Penting CSS
+          </button>
+          <button class="materi-tab-btn deden-tab-pill" onclick="switchMateriTab('materi-f')">
+            <span class="tab-badge deden-badge">F</span> 🏫 Studi Kasus: Biodata MTsN 5
+          </button>
+          <button class="materi-tab-btn js-tab-pill" onclick="switchMateriTab('materi-g')">
+            <span class="tab-badge js-badge-circle">G</span> ⚡ JavaScript Dasar
+          </button>
+        </div>
+
+        <!-- KONTEN MATERI A: MENGENAL HTML -->
+        <div id="materi-a" class="materi-content-panel active">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-html">Topik A • Pengenalan</span>
+              <h3 class="panel-topic-title">Mengenal HTML</h3>
+            </div>
+
+            <!-- Penjelasan Sederhana -->
+            <div class="concept-callout html-callout">
+              <span class="callout-icon">💡</span>
+              <div>
+                <strong>Pengertian Sederhana:</strong>
+                <p>HTML adalah bahasa yang digunakan untuk <strong>membuat struktur atau isi</strong> sebuah halaman web.</p>
+                <div class="equation-box">
+                  <span class="eq-tag">HTML</span> = <strong>Struktur Halaman Web</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analogi Rumah -->
+            <div class="analogy-card">
+              <div class="analogy-header">
+                <span class="analogy-emoji">🏠</span>
+                <h4>Analogi Rumah untuk Memahami HTML:</h4>
+              </div>
+              <p class="analogy-text">
+                Jika sebuah halaman web diibaratkan sebagai rumah:
+              </p>
+              <div class="analogy-grid">
+                <div class="analogy-box html-analogy-box">
+                  <span class="box-icon">🧱</span>
+                  <h5>HTML adalah Bagian-Bagian Rumah</h5>
+                  <p>HTML berfungsi membuat bagian-bagian rumah seperti pintu, jendela, kamar, dan ruangan.</p>
+                </div>
+                <div class="analogy-box css-analogy-box">
+                  <span class="box-icon">🎨</span>
+                  <h5>CSS adalah Cat & Dekorasi</h5>
+                  <p>CSS memberi warna cat tembok, tirai jendela, dan penataan sofa agar rumah terlihat indah.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contoh Sederhana + Preview Sebelah Kode -->
+            <h4 class="subtopic-title">Contoh Sederhana:</h4>
+            <p class="subtopic-desc">Di bawah ini adalah contoh kode HTML paling mendasar yang menampilkan judul dan paragraf:</p>
+
+            <div class="code-and-preview-row">
+              <div class="code-column">
+                <div class="window-bar">
+                  <div class="dot red"></div>
+                  <div class="dot yellow"></div>
+                  <div class="dot green"></div>
+                  <span class="window-title">latihan.html</span>
+                </div>
+                <pre class="code-block"><code><span class="token-tag">&lt;h1&gt;</span>Halo Dunia!<span class="token-tag">&lt;/h1&gt;</span>
+<span class="token-tag">&lt;p&gt;</span>Ini adalah halaman web pertama saya.<span class="token-tag">&lt;/p&gt;</span></code></pre>
+              </div>
+
+              <div class="preview-column">
+                <div class="browser-mockup-bar">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <div class="browser-url-bar">https://sekolahku.sch.id/halo</div>
+                </div>
+                <div class="preview-render-box">
+                  <h1 class="rendered-h1">Halo Dunia!</h1>
+                  <p class="rendered-p">Ini adalah halaman web pertama saya.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-b')">
+                Lanjut ke Topik B: Struktur Dasar HTML &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KONTEN MATERI B: STRUKTUR DASAR HTML -->
+        <div id="materi-b" class="materi-content-panel">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-html">Topik B • Kerangka Web</span>
+              <h3 class="panel-topic-title">Struktur Dasar Dokumen HTML</h3>
+            </div>
+
+            <p class="panel-intro">
+              Dokumen HTML selalu diawali dengan kerangka standar seperti berikut ini:
+            </p>
+
+            <div class="code-and-preview-row">
+              <div class="code-column">
+                <div class="window-bar">
+                  <div class="dot red"></div>
+                  <div class="dot yellow"></div>
+                  <div class="dot green"></div>
+                  <span class="window-title">struktur_dasar.html</span>
+                </div>
+                <pre class="code-block"><code><span class="token-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token-tag">&lt;html&gt;</span>
+<span class="token-tag">&lt;head&gt;</span>
+    <span class="token-tag">&lt;title&gt;</span>Halaman Saya<span class="token-tag">&lt;/title&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span>
+<span class="token-tag">&lt;body&gt;</span>
+
+    <span class="token-tag">&lt;h1&gt;</span>Halo!<span class="token-tag">&lt;/h1&gt;</span>
+    <span class="token-tag">&lt;p&gt;</span>Selamat datang.<span class="token-tag">&lt;/p&gt;</span>
+
+<span class="token-tag">&lt;/body&gt;</span>
+<span class="token-tag">&lt;/html&gt;</span></code></pre>
+              </div>
+
+              <!-- Diagram Pohon HTML (Sesuai Spesifikasi) -->
+              <div class="preview-column tree-column">
+                <h4 class="diagram-heading">🌳 Diagram Struktur Dokumen HTML:</h4>
+                <div class="visual-tree-box">
+                  <div class="tree-node root-node">
+                    <span class="tree-icon">📄</span> <strong>HTML</strong> (Pembungkus Utama)
+                  </div>
+                  <div class="tree-branch">
+                    <div class="tree-child branch-head">
+                      <div class="node-title">├── <span class="tag-chip">HEAD</span> (Informasi Halaman)</div>
+                      <div class="node-sub">│ &nbsp; └── <span class="tag-chip-leaf">TITLE</span> (Judul Tab Browser)</div>
+                    </div>
+                    <div class="tree-child branch-body">
+                      <div class="node-title">└── <span class="tag-chip chip-body">BODY</span> (Isi Terlihat Pengguna)</div>
+                      <div class="node-sub">├── <span class="tag-chip-leaf">HEADING</span> (Judul)</div>
+                      <div class="node-sub">├── <span class="tag-chip-leaf">PARAGRAPH</span> (Teks Paragraf)</div>
+                      <div class="node-sub">├── <span class="tag-chip-leaf">IMAGE</span> (Gambar)</div>
+                      <div class="node-sub">└── <span class="tag-chip-leaf">LINK</span> (Tautan)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Penjelasan Sederhana Setiap Bagian (Sesuai Spesifikasi) -->
+            <h4 class="subtopic-title">Penjelasan Setiap Bagian:</h4>
+            <div class="explanation-grid-cards">
+              <div class="explain-card">
+                <code class="code-badge">&lt;!DOCTYPE html&gt;</code>
+                <p>Memberi tahu browser bahwa dokumen menggunakan HTML.</p>
+              </div>
+              <div class="explain-card">
+                <code class="code-badge">&lt;html&gt;</code>
+                <p>Menjadi pembungkus utama halaman HTML.</p>
+              </div>
+              <div class="explain-card">
+                <code class="code-badge">&lt;head&gt;</code>
+                <p>Berisi informasi halaman seperti judul.</p>
+              </div>
+              <div class="explain-card">
+                <code class="code-badge">&lt;title&gt;</code>
+                <p>Menentukan judul yang muncul pada tab browser.</p>
+              </div>
+              <div class="explain-card highlight-body-card">
+                <code class="code-badge badge-body">&lt;body&gt;</code>
+                <p><strong>Bagian Utama:</strong> Berisi isi halaman yang terlihat oleh pengguna.</p>
+              </div>
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-a')">&larr; Kembali ke Topik A</button>
+              <button class="btn btn-primary" onclick="openMateriSub('materi-c')">Lanjut ke Topik C: Elemen HTML &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KONTEN MATERI C: ELEMEN HTML DASAR -->
+        <div id="materi-c" class="materi-content-panel">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-html">Topik C • Elemen Dasar</span>
+              <h3 class="panel-topic-title">Elemen HTML Dasar</h3>
+            </div>
+            <p class="panel-intro">
+              Berikut adalah kartu interaktif elemen HTML yang paling penting untuk siswa SMP:
+            </p>
+
+            <div class="elements-list-vertical">
+              
+              <!-- 1. Heading -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">1</span>
+                  <h4>Heading (Judul)</h4>
+                </div>
+                <p class="element-text">Digunakan untuk membuat judul tulisan bertingkat:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;h1&gt;</span>Judul Utama<span class="token-tag">&lt;/h1&gt;</span>
+<span class="token-tag">&lt;h2&gt;</span>Subjudul<span class="token-tag">&lt;/h2&gt;</span>
+<span class="token-tag">&lt;h3&gt;</span>Subjudul Kecil<span class="token-tag">&lt;/h3&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <h1 style="font-size: 22px; margin-bottom: 4px; color: #1e293b;">Judul Utama</h1>
+                    <h2 style="font-size: 17px; margin-bottom: 4px; color: #334155;">Subjudul</h2>
+                    <h3 style="font-size: 14px; color: #64748b;">Subjudul Kecil</h3>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <strong>Tekankan:</strong> <code>&lt;h1&gt;</code> merupakan heading paling utama, <code>&lt;h2&gt;</code> untuk subjudul, dan <code>&lt;h3&gt;</code> untuk bagian yang lebih kecil.
+                </div>
+              </div>
+
+              <!-- 2. Paragraph -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">2</span>
+                  <h4>Paragraph (Paragraf)</h4>
+                </div>
+                <p class="element-text">Tag <code>&lt;p&gt;</code> digunakan untuk membuat paragraf:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;p&gt;</span>Ini adalah sebuah paragraf.<span class="token-tag">&lt;/p&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <p style="margin: 0; color: #334155;">Ini adalah sebuah paragraf.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Link -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">3</span>
+                  <h4>Link (Tautan)</h4>
+                </div>
+                <p class="element-text">Tag <code>&lt;a&gt;</code> digunakan untuk membuat tautan/link:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"https://example.com"</span><span class="token-tag">&gt;</span>Kunjungi Website<span class="token-tag">&lt;/a&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <a href="javascript:void(0)" style="color: #2563eb; text-decoration: underline; font-weight: 600;">Kunjungi Website 🔗</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Image -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">4</span>
+                  <h4>Image (Gambar)</h4>
+                </div>
+                <p class="element-text">Tag <code>&lt;img&gt;</code> digunakan untuk menampilkan gambar:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;img</span> <span class="token-attr">src=</span><span class="token-val">"gambar.jpg"</span> <span class="token-attr">alt=</span><span class="token-val">"Foto Saya"</span><span class="token-tag">&gt;</span></code></pre>
+                  <div class="mini-preview" style="text-align: center;">
+                    <div style="background: #e0e7ff; color: #4338ca; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
+                      <span>📸</span> [Foto: gambar.jpg (Foto Saya)]
+                    </div>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <code>src</code> = lokasi gambar, <code>alt</code> = teks alternatif gambar.
+                </div>
+              </div>
+
+              <!-- 5. List -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">5</span>
+                  <h4>List (Daftar)</h4>
+                </div>
+                <p class="element-text">Perbedaan Unordered List (bullet) dan Ordered List (nomor):</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">&lt;!-- Unordered List (Bullet) --&gt;</span>
+<span class="token-tag">&lt;ul&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Membaca<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Olahraga<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Bermain Musik<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ul&gt;</span>
+
+<span class="token-comment">&lt;!-- Ordered List (Nomor) --&gt;</span>
+<span class="token-tag">&lt;ol&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Bangun<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Mandi<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Sarapan<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ol&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <strong style="font-size: 12px; color: #64748b;">Daftar Bullet (&lt;ul&gt;):</strong>
+                    <ul style="padding-left: 20px; margin-bottom: 8px; font-size: 13px;">
+                      <li>Membaca</li>
+                      <li>Olahraga</li>
+                      <li>Bermain Musik</li>
+                    </ul>
+                    <strong style="font-size: 12px; color: #64748b;">Daftar Nomor (&lt;ol&gt;):</strong>
+                    <ol style="padding-left: 20px; font-size: 13px;">
+                      <li>Bangun</li>
+                      <li>Mandi</li>
+                      <li>Sarapan</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <code>&lt;ul&gt;</code> = daftar dengan bullet. <code>&lt;ol&gt;</code> = daftar dengan nomor.
+                </div>
+              </div>
+
+              <!-- 6. Table -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">6</span>
+                  <h4>Table (Tabel)</h4>
+                </div>
+                <p class="element-text">Contoh tabel sederhana berisi nama dan kelas siswa:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;table&gt;</span>
+    <span class="token-tag">&lt;tr&gt;</span>
+        <span class="token-tag">&lt;th&gt;</span>Nama<span class="token-tag">&lt;/th&gt;</span>
+        <span class="token-tag">&lt;th&gt;</span>Kelas<span class="token-tag">&lt;/th&gt;</span>
+    <span class="token-tag">&lt;/tr&gt;</span>
+    <span class="token-tag">&lt;tr&gt;</span>
+        <span class="token-tag">&lt;td&gt;</span>Andi<span class="token-tag">&lt;/td&gt;</span>
+        <span class="token-tag">&lt;td&gt;</span>8A<span class="token-tag">&lt;/td&gt;</span>
+    <span class="token-tag">&lt;/tr&gt;</span>
+<span class="token-tag">&lt;/table&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <table class="sample-demo-table">
+                      <thead>
+                        <tr><th>Nama</th><th>Kelas</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>Andi</td><td>8A</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <code>&lt;table&gt;</code> = tabel, <code>&lt;tr&gt;</code> = baris, <code>&lt;th&gt;</code> = judul kolom, <code>&lt;td&gt;</code> = isi tabel.
+                </div>
+              </div>
+
+              <!-- 7. Form -->
+              <div class="element-box">
+                <div class="element-header">
+                  <span class="element-num">7</span>
+                  <h4>Form Sederhana (Formulir)</h4>
+                </div>
+                <p class="element-text">Contoh sederhana formulir untuk memasukkan data nama:</p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-tag">&lt;form&gt;</span>
+    <span class="token-tag">&lt;label&gt;</span>Nama:<span class="token-tag">&lt;/label&gt;</span>
+    <span class="token-tag">&lt;input</span> <span class="token-attr">type=</span><span class="token-val">"text"</span><span class="token-tag">&gt;</span>
+
+    <span class="token-tag">&lt;button</span> <span class="token-attr">type=</span><span class="token-val">"submit"</span><span class="token-tag">&gt;</span>Kirim<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/form&gt;</span></code></pre>
+                  <div class="mini-preview">
+                    <div style="background: #ffffff; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                      <label style="display: block; font-weight: 600; font-size: 13px; margin-bottom: 4px;">Nama:</label>
+                      <input type="text" placeholder="Masukkan nama..." style="padding: 6px 10px; border: 1px solid #94a3b8; border-radius: 4px; width: 100%; margin-bottom: 8px; font-size: 13px;" readonly value="Andi">
+                      <button type="button" style="background: #2563eb; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; font-size: 12px; cursor: pointer;">Kirim</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <code>&lt;form&gt;</code> = wadah formulir, <code>&lt;label&gt;</code> = keterangan, <code>&lt;input&gt;</code> = tempat memasukkan data, <code>&lt;button&gt;</code> = tombol.
+                </div>
+              </div>
+
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-b')">&larr; Kembali ke Topik B</button>
+              <button class="btn btn-primary" onclick="openMateriSub('materi-d')">Lanjut ke Topik D: Mengenal CSS &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KONTEN MATERI D: MENGENAL CSS -->
+                <!-- ==================================================================
+             KONTEN MATERI D: MENGENAL CSS & 3 CARA PENGGUNAAN (DETAIL & LENGKAP)
+             ================================================================== -->
+        <div id="materi-d" class="materi-content-panel">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-css">Topik D • Pengenalan &amp; Cara Penggunaan</span>
+              <h3 class="panel-topic-title">Mengenal CSS &amp; 3 Cara Penggunaannya</h3>
+            </div>
+
+            <!-- Pengertian Mendalam -->
+            <div class="concept-callout css-callout">
+              <span class="callout-icon">🎨</span>
+              <div>
+                <strong>Apa itu CSS?</strong>
+                <p>
+                  <strong>CSS</strong> adalah singkatan dari <em>Cascading Style Sheets</em> (Lembar Gaya Bertingkat). CSS adalah bahasa yang digunakan untuk <strong>mengatur tampilan visual, warna, ukuran, tata letak (layout), dan keindahan</strong> sebuah halaman web yang strukturnya telah dibuat menggunakan HTML.
+                </p>
+                <div class="equation-box">
+                  <span class="eq-tag-html">HTML (Struktur &amp; Isi)</span> + <span class="eq-tag-css">CSS (Tata Rias &amp; Desain)</span> = <strong>Website yang Rapi &amp; Menarik!</strong> ✨
+                </div>
+              </div>
+            </div>
+
+            <!-- Mengapa HTML Harus Dipisah dari CSS? -->
+            <div class="analogy-card">
+              <div class="analogy-header">
+                <span class="analogy-emoji">💡</span>
+                <h4>Mengapa HTML dan CSS Harus Dipisahkan? (Prinsip Ahli Web)</h4>
+              </div>
+              <p class="analogy-text">
+                Bayangkan kamu sedang mempersiapkan diri berangkat ke sekolah:
+              </p>
+              <div class="analogy-grid">
+                <div class="analogy-box html-analogy-box">
+                  <span class="box-icon">🧍</span>
+                  <h5>HTML = Tubuh Manusia / Kerangka Rumah</h5>
+                  <p>Menentukan ada kepala, badan, tangan, dan kaki. Pada web: menentukan ada teks judul, paragraf, gambar, dan tabel.</p>
+                </div>
+                <div class="analogy-box css-analogy-box">
+                  <span class="box-icon">👔</span>
+                  <h5>CSS = Seragam, Sepatu &amp; Aksesoris Rapi</h5>
+                  <p>Memakaikan kemeja putih berlogo MTsN, dasi rapi, celana biru, sepatu mengkilap, dan tatanan rambut keren. Tanpa pakaian yang rapi (CSS), tubuh (HTML) akan terlihat sangat polos dan canggung!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Anatomi Aturan CSS (Rule Set) -->
+            <h4 class="subtopic-title">Anatomi Sebuah Aturan CSS (CSS Rule Set)</h4>
+            <p class="section-desc-text">
+              Setiap aturan penulisan CSS terdiri dari 3 bagian utama: <strong>Selector</strong>, <strong>Property</strong>, dan <strong>Value</strong>.
+            </p>
+
+            <div class="css-anatomy-card">
+              <div class="anatomy-visual-row">
+                <div class="anatomy-part part-selector">
+                  <span class="part-label">SELECTOR</span>
+                  <span class="part-code">h1</span>
+                  <span class="part-desc">Siapa elemen HTML yang ingin kita hias?</span>
+                </div>
+                <span class="anatomy-bracket">{</span>
+                <div class="anatomy-declaration">
+                  <div class="anatomy-part part-prop">
+                    <span class="part-label">PROPERTY</span>
+                    <span class="part-code">color</span>
+                    <span class="part-desc">Sifat apa yang ingin diubah?</span>
+                  </div>
+                  <span class="anatomy-colon">:</span>
+                  <div class="anatomy-part part-val">
+                    <span class="part-label">VALUE</span>
+                    <span class="part-code">blue</span>
+                    <span class="part-desc">Mau diubah menjadi apa?</span>
+                  </div>
+                  <span class="anatomy-semicolon">;</span>
+                </div>
+                <span class="anatomy-bracket">}</span>
+              </div>
+              <div class="anatomy-note">
+                ⚠️ <strong>Catatan Penting:</strong> Jangan lupa tanda titik dua (<code>:</code>) sebagai pemisah dan titik koma (<code>;</code>) untuk mengakhiri setiap aturan properti!
+              </div>
+            </div>
+
+            <!-- 3 CARA MENGHUBUNGKAN/MENGGUNAKAN CSS -->
+            <div class="subtopic-divider">
+              <h4 class="subtopic-title">3 Cara Menggunakan CSS pada Dokumen HTML</h4>
+              <p class="section-desc-text">
+                Ada 3 metode untuk menerapkan CSS ke dalam halaman web. Setiap metode memiliki tempat penulisan, kelebihan, dan kegunaannya masing-masing:
+              </p>
+            </div>
+
+            <div class="css-methods-grid">
+              
+              <!-- Metode 1: External CSS -->
+              <div class="css-method-card method-external highlight-method">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 1 (Sangat Dianjurkan) ⭐⭐⭐</span>
+                  <span class="method-tag tag-ext">STANDAR INDUSTRI</span>
+                </div>
+                <h4 class="method-title">1. External CSS (Berkas Terpisah)</h4>
+                <p class="method-desc">
+                  Kode CSS ditulis di dalam berkas terpisah berekstensi <code>.css</code> (contoh: <code>style.css</code>), lalu dihubungkan ke berkas HTML menggunakan tag <code>&lt;link&gt;</code> di dalam bagian <code>&lt;head&gt;</code>.
+                </p>
+
+                <div class="method-code-compare">
+                  <div class="method-file">
+                    <div class="file-tag">File: index.html</div>
+                    <pre class="mini-code"><code><span class="token-tag">&lt;head&gt;</span>
+    <span class="token-tag">&lt;title&gt;</span>Halaman Siswa<span class="token-tag">&lt;/title&gt;</span>
+    <span class="token-comment">&lt;!-- Menghubungkan file CSS --&gt;</span>
+    <span class="token-tag">&lt;link</span> <span class="token-attr">rel=</span><span class="token-val">"stylesheet"</span> <span class="token-attr">href=</span><span class="token-val">"style.css"</span><span class="token-tag">&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span></code></pre>
+                  </div>
+                  <div class="method-file">
+                    <div class="file-tag">File: style.css</div>
+                    <pre class="mini-code"><code><span class="token-selector">body</span> {
+    <span class="token-prop">background-color</span>: <span class="token-val">#f0f4f8</span>;
+    <span class="token-prop">font-family</span>: <span class="token-val">Arial, sans-serif</span>;
+}
+<span class="token-selector">h1</span> {
+    <span class="token-prop">color</span>: <span class="token-val">#1e3a8a</span>;
+}</code></pre>
+                  </div>
+                </div>
+
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Kode sangat rapi, dan <strong>1 file style.css dapat digunakan oleh puluhan bahkan ratusan halaman web</strong> secara bersamaan!</div>
+                  <div class="con-item">❌ <strong>Kekurangan:</strong> Memerlukan 2 berkas terpisah di dalam folder komputer.</div>
+                </div>
+              </div>
+
+              <!-- Metode 2: Internal CSS -->
+              <div class="css-method-card method-internal">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 2 (Khusus 1 Halaman) ⭐⭐</span>
+                  <span class="method-tag tag-int">TERTANAM DI HEAD</span>
+                </div>
+                <h4 class="method-title">2. Internal CSS (Tag &lt;style&gt; di dalam &lt;head&gt;)</h4>
+                <p class="method-desc">
+                  Kode CSS diletakkan langsung di dalam dokumen HTML itu sendiri, tepatnya di dalam tag <code>&lt;style&gt; ... &lt;/style&gt;</code> di antara tag <code>&lt;head&gt;</code>.
+                </p>
+
+                <div class="method-file">
+                  <div class="file-tag">File: index.html</div>
+                  <pre class="mini-code"><code><span class="token-tag">&lt;head&gt;</span>
+    <span class="token-tag">&lt;title&gt;</span>Halaman Khusus<span class="token-tag">&lt;/title&gt;</span>
+    <span class="token-tag">&lt;style&gt;</span>
+        <span class="token-selector">h1</span> {
+            <span class="token-prop">color</span>: <span class="token-val">#059669</span>;
+            <span class="token-prop">text-align</span>: <span class="token-val">center</span>;
+        }
+        <span class="token-selector">p</span> {
+            <span class="token-prop">font-size</span>: <span class="token-val">16px</span>;
+        }
+    <span class="token-tag">&lt;/style&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span></code></pre>
+                </div>
+
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Praktis jika kita hanya membuat 1 halaman tunggal yang memiliki gaya unik dan tidak dipakai halaman lain.</div>
+                  <div class="con-item">❌ <strong>Kekurangan:</strong> Tidak bisa dipakai bersama oleh halaman HTML lain; jika ada 10 halaman maka kode CSS harus dicopy 10 kali.</div>
+                </div>
+              </div>
+
+              <!-- Metode 3: Inline CSS -->
+              <div class="css-method-card method-inline">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 3 (Gaya Langsung di Tag) ⭐</span>
+                  <span class="method-tag tag-inl">ATRIBUT STYLE</span>
+                </div>
+                <h4 class="method-title">3. Inline CSS (Atribut style="..." pada Tag)</h4>
+                <p class="method-desc">
+                  Kode CSS ditulis langsung menempel pada tag HTML yang bersangkutan menggunakan atribut <code>style="..."</code>.
+                </p>
+
+                <div class="method-file">
+                  <div class="file-tag">File: index.html</div>
+                  <pre class="mini-code"><code><span class="token-comment">&lt;!-- Atribut style langsung menempel di elemen --&gt;</span>
+<span class="token-tag">&lt;h1</span> <span class="token-attr">style=</span><span class="token-val">"color: red; text-align: center; font-size: 26px;"</span><span class="token-tag">&gt;</span>
+    Biodata Siswa
+<span class="token-tag">&lt;/h1&gt;</span>
+
+<span class="token-tag">&lt;p</span> <span class="token-attr">style=</span><span class="token-val">"background-color: yellow; padding: 6px; font-weight: bold;"</span><span class="token-tag">&gt;</span>
+    Teks ini diberi stabilo kuning darurat.
+<span class="token-tag">&lt;/p&gt;</span></code></pre>
+                </div>
+
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Sangat cepat untuk uji coba darurat atau memberi warna khusus pada satu elemen spesifik.</div>
+                  <div class="con-item">❌ <strong>Kekurangan:</strong> Membuat kode HTML sangat berantakan, sulit dirawat, dan tidak dianjurkan untuk proyek besar!</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tabel Perbandingan & Urutan Prioritas -->
+            <div class="compare-table-wrapper">
+              <h4 class="subtopic-title">Tabel Rangkuman &amp; Urutan Kekuatan (Prioritas Cascading)</h4>
+              <p class="section-desc-text">
+                Jika ada elemen yang diatur oleh ketiga metode sekaligus, siapakah yang akan menang dan tampil di layar?
+              </p>
+
+              <table class="css-summary-table">
+                <thead>
+                  <tr>
+                    <th>Metode CSS</th>
+                    <th>Lokasi Penulisan</th>
+                    <th>Tingkat Kekuatan (Prioritas)</th>
+                    <th>Rekomendasi Penggunaan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-row">
+                    <td><strong>1. Inline CSS</strong></td>
+                    <td>Langsung di tag elemen (<code>style="..."</code>)</td>
+                    <td><span class="badge-priority p-high">Paling Kuat (Prioritas 1)</span></td>
+                    <td>Hanya untuk tes cepat 1 elemen</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Internal CSS</strong></td>
+                    <td>Di dalam tag <code>&lt;style&gt;</code> di <code>&lt;head&gt;</code></td>
+                    <td><span class="badge-priority p-med">Menengah (Prioritas 2)</span></td>
+                    <td>Untuk 1 halaman khusus</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. External CSS</strong></td>
+                    <td>Di berkas <code>style.css</code> terpisah</td>
+                    <td><span class="badge-priority p-norm">Standar (Prioritas 3)*</span></td>
+                    <td><strong>Paling Dianjurkan untuk Semua Web</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="element-note" style="margin-top: 10px;">
+                💡 <strong>Prinsip Cascading Sederhana:</strong> <em>"Siapa yang paling dekat menempel pada elemen HTML, perintah gayanya yang akan diprioritaskan oleh peramban!"</em>
+              </div>
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-c')">&larr; Kembali ke Topik C</button>
+              <button class="btn btn-primary" onclick="openMateriSub('materi-e')">Lanjut ke Topik E: Properti Penting CSS &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             KONTEN MATERI E: PROPERTI-PROPERTI PENTING CSS (KATALOG LENGKAP)
+             ================================================================== -->
+        <div id="materi-e" class="materi-content-panel">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-css">Topik E • Properti Utama</span>
+              <h3 class="panel-topic-title">Properti-Properti Penting CSS yang Wajib Dikuasai</h3>
+            </div>
+            <p class="panel-intro">
+              Agar kamu bisa membuat website yang indah seperti para programmer profesional, berikut adalah <strong>katalog properti penting CSS</strong> yang paling sering digunakan dalam kehidupan nyata:
+            </p>
+
+            <!-- KELOMPOK 1: SELECTOR -->
+            <div class="prop-category-block">
+              <div class="category-header-chip">
+                <span class="cat-icon">🎯</span> KELOMPOK 1: SELECTOR (PEMILIH ELEMEN)
+              </div>
+              
+              <div class="css-props-grid">
+                <div class="css-prop-card">
+                  <div class="prop-badge">1. Element Selector</div>
+                  <h4>Selector Tag / Elemen</h4>
+                  <p>Memilih semua elemen yang memiliki nama tag yang sama di seluruh halaman.</p>
+                  <pre class="mini-code"><code><span class="token-selector">p</span> {
+    <span class="token-prop">color</span>: <span class="token-val">#334155</span>;
+}</code></pre>
+                  <p class="prop-desc">Semua tag <code>&lt;p&gt;</code> akan otomatis berwarna abu-abu gelap.</p>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">2. Class Selector (.)</div>
+                  <h4>Selector Kelas (Tanda Titik)</h4>
+                  <p>Memilih elemen yang memiliki atribut <code>class="..."</code>. Bisa dipakai berulang kali.</p>
+                  <pre class="mini-code"><code><span class="token-selector">.kartu-siswa</span> {
+    <span class="token-prop">background</span>: <span class="token-val">white</span>;
+    <span class="token-prop">border-radius</span>: <span class="token-val">10px</span>;
+}</code></pre>
+                  <p class="prop-desc">Dipanggil di HTML dengan: <code>&lt;div class="kartu-siswa"&gt;</code></p>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">3. ID Selector (#)</div>
+                  <h4>Selector ID (Tanda Pagar)</h4>
+                  <p>Memilih satu elemen khusus yang memiliki atribut <code>id="..."</code> unik di halaman.</p>
+                  <pre class="mini-code"><code><span class="token-selector">#biodata-utama</span> {
+    <span class="token-prop">border</span>: <span class="token-val">2px solid blue</span>;
+}</code></pre>
+                  <p class="prop-desc">Dipanggil di HTML dengan: <code>&lt;div id="biodata-utama"&gt;</code></p>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">4. Pseudo-Class (:hover)</div>
+                  <h4>Efek Sentuhan Kursor (:hover)</h4>
+                  <p>Memberi animasi perubahan gaya saat kursor mouse melayang di atas elemen.</p>
+                  <pre class="mini-code"><code><span class="token-selector">button:hover</span> {
+    <span class="token-prop">background-color</span>: <span class="token-val">#1d4ed8</span>;
+    <span class="token-prop">transform</span>: <span class="token-val">scale(1.05)</span>;
+}</code></pre>
+                  <div class="prop-preview" style="text-align: center;">
+                    <button type="button" class="btn-demo-hover">Sentuh Saya dengan Mouse! 👆</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- KELOMPOK 2: TEKS & TIPOGRAFI -->
+            <div class="prop-category-block">
+              <div class="category-header-chip chip-text">
+                <span class="cat-icon">✍️</span> KELOMPOK 2: TEKS &amp; TIPOGRAFI
+              </div>
+
+              <div class="css-props-grid">
+                <div class="css-prop-card">
+                  <div class="prop-badge">color</div>
+                  <h4>Warna Teks</h4>
+                  <p>Mengubah warna huruf. Bisa menggunakan nama warna (<code>blue</code>) atau kode HEX (<code>#2563eb</code>).</p>
+                  <pre class="mini-code"><code><span class="token-selector">h1</span> { <span class="token-prop">color</span>: <span class="token-val">#2563eb</span>; }</code></pre>
+                  <div class="prop-preview" style="color: #2563eb; font-weight: bold;">Teks Biru Modern (#2563eb)</div>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">font-family</div>
+                  <h4>Jenis Huruf (Font)</h4>
+                  <p>Menentukan jenis huruf yang digunakan agar tulisan terlihat modern dan nyaman dibaca.</p>
+                  <pre class="mini-code"><code><span class="token-selector">body</span> { <span class="token-prop">font-family</span>: <span class="token-val">Arial, sans-serif</span>; }</code></pre>
+                  <div class="prop-preview" style="font-family: Arial, sans-serif; font-size: 13px;">Font Arial Bersih Tanpa Gerigi</div>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">font-size &amp; font-weight</div>
+                  <h4>Ukuran &amp; Ketebalan Teks</h4>
+                  <p><code>font-size</code> mengatur besar teks (px), <code>font-weight</code> mengatur ketebalan (bold).</p>
+                  <pre class="mini-code"><code><span class="token-selector">h2</span> { 
+    <span class="token-prop">font-size</span>: <span class="token-val">24px</span>; 
+    <span class="token-prop">font-weight</span>: <span class="token-val">bold</span>; 
+}</code></pre>
+                  <div class="prop-preview" style="font-size: 20px; font-weight: bold; color: #0f172a;">Ukuran 24px Tebal</div>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">text-align &amp; text-decoration</div>
+                  <h4>Perataan &amp; Dekorasi Teks</h4>
+                  <p><code>text-align</code> mengatur posisi (center/left/right), <code>text-decoration: none;</code> menghapus garis bawah link.</p>
+                  <pre class="mini-code"><code><span class="token-selector">a</span> { 
+    <span class="token-prop">text-decoration</span>: <span class="token-val">none</span>; 
+}</code></pre>
+                  <div class="prop-preview" style="text-align: center;">
+                    <a href="javascript:void(0)" style="text-decoration: none; color: #16a34a; font-weight: bold; background: #dcfce7; padding: 4px 10px; border-radius: 6px;">Tautan Tanpa Garis Bawah</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- KELOMPOK 3: BOX MODEL & PENGATURAN JARAK -->
+            <div class="prop-category-block">
+              <div class="category-header-chip chip-box">
+                <span class="cat-icon">📦</span> KELOMPOK 3: CSS BOX MODEL &amp; PENGATURAN JARAK
+              </div>
+
+              <!-- Box Model Visual Card -->
+              <div class="css-prop-card full-width-prop">
+                <div class="prop-badge">Box Model: Margin, Border, Padding, Content</div>
+                <h4>Memahami Konsep Kotak di Setiap Elemen Web</h4>
+                <p class="prop-desc">
+                  Di dalam browser, setiap elemen HTML (judul, gambar, tombol, kotak) dianggap sebagai sebuah <strong>KOTAK</strong> berlapis-lapis:
+                </p>
+
+                <div class="margin-padding-container">
+                  <div class="mp-text-explain">
+                    <div class="box-explain-item">
+                      <span class="badge-exp exp-margin">1. MARGIN (Jarak Luar)</span>
+                      <p>Jarak di bagian luar batas kotak dengan elemen lain di sekelilingnya. Memberi ruang bernapas antar elemen.</p>
+                      <pre class="mini-code"><code><span class="token-selector">div</span> { <span class="token-prop">margin</span>: <span class="token-val">20px</span>; }</code></pre>
+                    </div>
+
+                    <div class="box-explain-item" style="margin-top: 10px;">
+                      <span class="badge-exp exp-border">2. BORDER (Garis Tepi)</span>
+                      <p>Garis bingkai pembatas kotak (ketebalan, tipe garis, warna).</p>
+                      <pre class="mini-code"><code><span class="token-selector">div</span> { <span class="token-prop">border</span>: <span class="token-val">2px solid #2563eb</span>; }</code></pre>
+                    </div>
+
+                    <div class="box-explain-item" style="margin-top: 10px;">
+                      <span class="badge-exp exp-padding">3. PADDING (Jarak Dalam)</span>
+                      <p>Jarak antara isi teks/gambar dengan garis tepi kotak. Membuat teks tidak menempel sesak di pinggir.</p>
+                      <pre class="mini-code"><code><span class="token-selector">div</span> { <span class="token-prop">padding</span>: <span class="token-val">16px</span>; }</code></pre>
+                    </div>
+                  </div>
+
+                  <!-- Diagram Box Model -->
+                  <div class="visual-box-model">
+                    <div class="box-layer margin-layer">
+                      <span class="layer-label">MARGIN (Jarak Luar)</span>
+                      <div class="box-layer border-layer">
+                        <span class="layer-label">BORDER (Garis Tepi)</span>
+                        <div class="box-layer padding-layer">
+                          <span class="layer-label">PADDING (Jarak Dalam)</span>
+                          <div class="box-layer content-layer">
+                            <strong>ISI KONTEN (Teks/Gambar)</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Border Radius & Centering -->
+              <div class="css-props-grid" style="margin-top: 16px;">
+                <div class="css-prop-card">
+                  <div class="prop-badge">border-radius</div>
+                  <h4>Sudut Melengkung (Rounded Corners)</h4>
+                  <p>Membuat sudut kotak menjadi tumpul dan modern, tidak kaku runcing 90 derajat.</p>
+                  <pre class="mini-code"><code><span class="token-selector">div</span> { 
+    <span class="token-prop">border-radius</span>: <span class="token-val">12px</span>; 
+}</code></pre>
+                  <div class="prop-preview" style="background: #e0e7ff; color: #4338ca; padding: 10px; border-radius: 12px; text-align: center; font-weight: bold; border: 1px solid #c7d2fe;">
+                    Kotak dengan Sudut 12px Melengkung
+                  </div>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">max-width &amp; margin: 0 auto;</div>
+                  <h4>Trik Menengahkan Halaman</h4>
+                  <p>Trik paling populer desainer web untuk membuat kartu konten berada persis di tengah layar horizontal:</p>
+                  <pre class="mini-code"><code><span class="token-selector">.container</span> {
+    <span class="token-prop">max-width</span>: <span class="token-val">650px</span>;
+    <span class="token-prop">margin</span>: <span class="token-val">0 auto</span>; <span class="token-comment">/* Otomatis Tengah */</span>
+}</code></pre>
+                  <div class="prop-preview" style="text-align: center; font-size: 12px; color: #047857; background: #ecfdf5; padding: 6px; border-radius: 6px; font-weight: bold;">
+                    Konten Otomatis Center &amp; Responsif!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- KELOMPOK 4: MENATA TABEL & FORMULIR -->
+            <div class="prop-category-block">
+              <div class="category-header-chip chip-components">
+                <span class="cat-icon">📊</span> KELOMPOK 4: PROPERTI KHUSUS TABEL &amp; FORMULIR
+              </div>
+
+              <div class="css-props-grid">
+                <div class="css-prop-card">
+                  <div class="prop-badge">border-collapse &amp; th/td</div>
+                  <h4>Mempercantik Tabel Modern</h4>
+                  <p><code>border-collapse: collapse;</code> menyatukan garis ganda kuno menjadi 1 garis ramping.</p>
+                  <pre class="mini-code"><code><span class="token-selector">table</span> {
+    <span class="token-prop">width</span>: <span class="token-val">100%</span>;
+    <span class="token-prop">border-collapse</span>: <span class="token-val">collapse</span>;
+}
+<span class="token-selector">th, td</span> {
+    <span class="token-prop">padding</span>: <span class="token-val">8px 12px</span>;
+    <span class="token-prop">border</span>: <span class="token-val">1px solid #cbd5e1</span>;
+}
+<span class="token-selector">th</span> {
+    <span class="token-prop">background-color</span>: <span class="token-val">#1e3a8a</span>;
+    <span class="token-prop">color</span>: <span class="token-val">white</span>;
+}</code></pre>
+                </div>
+
+                <div class="css-prop-card">
+                  <div class="prop-badge">input, button, :focus</div>
+                  <h4>Mempercantik Formulir Input</h4>
+                  <p>Memberi padding, border rounded pada input, dan efek fokus bersinar saat diketik:</p>
+                  <pre class="mini-code"><code><span class="token-selector">input[type="text"]</span> {
+    <span class="token-prop">padding</span>: <span class="token-val">8px 12px</span>;
+    <span class="token-prop">border</span>: <span class="token-val">1px solid #94a3b8</span>;
+    <span class="token-prop">border-radius</span>: <span class="token-val">6px</span>;
+}
+<span class="token-selector">input:focus</span> {
+    <span class="token-prop">border-color</span>: <span class="token-val">#2563eb</span>;
+    <span class="token-prop">outline</span>: <span class="token-val">none</span>;
+}</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-d')">&larr; Kembali ke Topik D</button>
+              <button class="btn btn-primary" onclick="openMateriSub('materi-f')">Lanjut ke Topik F: Studi Kasus Biodata MTsN 5 🏫 &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             KONTEN MATERI F: STUDI KASUS MEMPERCANTIK BIODATA MTSN 5 SUMEDANG
+             ================================================================== -->
+        <div id="materi-f" class="materi-content-panel">
+          <div class="content-card">
+            
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-deden">Topik F • Studi Kasus Nyata</span>
+              <h3 class="panel-topic-title">Studi Kasus: Mempercantik Biodata Siswa MTsN 5 Sumedang (Deden Juliandi)</h3>
+            </div>
+
+            <!-- Banner Pengantar Studi Kasus -->
+            <div class="deden-study-banner">
+              <div class="deden-banner-badge">
+                <span class="sch-badge">🏫 MTsN 5 Sumedang</span>
+                <span class="class-badge">Kelas 9</span>
+                <span class="student-name-badge">Siswa: Deden Juliandi</span>
+              </div>
+              <h4 class="deden-banner-title">Misi: Menggabungkan Trio Web (HTML + CSS + JS) pada Biodata Deden Juliandi!</h4>
+              <p class="deden-banner-desc">
+                Berikut adalah kode HTML asli yang telah dibuat oleh siswa. Secara struktur HTML, kode ini <strong>sudah sangat lengkap</strong> memuat judul, paragraf identitas, tautan ChatGPT, gambar kamad, hobi, cita-cita, tabel riwayat pendidikan, dan formulir. Namun, tanpa CSS, tampilannya masih polos bawaan peramban (browser default). Mari kita sulap menggunakan CSS!
+              </p>
+            </div>
+
+            <!-- Pembahasan Langkah Demi Langkah Mempercantik dengan CSS -->
+            <h4 class="subtopic-title">7 Langkah Strategis Mempercantik Kode Tersebut:</h4>
+
+            <div class="step-guide-grid">
+              
+              <div class="step-guide-card">
+                <div class="step-num">1</div>
+                <h5>Membungkus Kanvas Halaman (body &amp; container)</h5>
+                <p>Mengubah background halaman menjadi abu-abu lembut (<code>#f0f4f8</code>) dan membungkus seluruh isi ke dalam kartu putih berpusat di tengah dengan <code>max-width: 680px; margin: 30px auto; padding: 30px; border-radius: 16px; box-shadow: ...</code>.</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">2</div>
+                <h5>Memperindah Judul &amp; Teks Pengenal</h5>
+                <p>Memberi warna biru elegan pada <code>h1</code> (<code>#1e3a8a</code>), memberi garis bawah aksen gradasi, serta mengganti jenis font ke <code>'Segoe UI', Arial, sans-serif</code> agar tulisan enak dibaca.</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">3</div>
+                <h5>Menyulap Link ChatGPT Menjadi Tombol Keren</h5>
+                <p>Tautan <code>&lt;a href="https://chatgpt.com/"&gt;</code> yang awalnya biru bergaris bawah kita ubah menjadi tombol hijau ChatGPT (<code>#10a37f</code>) dengan <code>text-decoration: none; padding: 9px 18px; border-radius: 8px; font-weight: bold;</code> lengkap dengan efek <code>:hover</code>!</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">4</div>
+                <h5>Merapikan Foto Kamad MTsN 5 Sumedang</h5>
+                <p>Daripada menggunakan <code>width="10%"</code> yang bisa gepeng, di CSS kita atur lebarnya menjadi pasti (misal <code>130px</code>), sudut membulat <code>border-radius: 12px;</code>, dan bingkai putih berbayang tipis.</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">5</div>
+                <h5>Mengemas Hobi &amp; Cita-Cita Menjadi Kartu Pastel</h5>
+                <p>List hobi (<code>&lt;ul&gt;</code>) dan cita-cita (<code>&lt;ol&gt;</code>) diberi latar belakang kartu lembut pastel (kuning hangat untuk hobi, hijau segar untuk cita-cita) dengan padding yang rapi.</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">6</div>
+                <h5>Merombak Tabel Riwayat Pendidikan</h5>
+                <p>Menghapus atribut kuno <code>border="1"</code> dan menggantinya dengan aturan CSS modern: <code>border-collapse: collapse;</code>, latar header kolom <code>&lt;th&gt;</code> biru dongker, dan sel <code>&lt;td&gt;</code> yang diberi jarak lega.</p>
+              </div>
+
+              <div class="step-guide-card">
+                <div class="step-num">7</div>
+                <h5>Merapikan Formulir Masukan</h5>
+                <p>Kotak input diberi border halus <code>#cbd5e1</code>, efek bersinar saat diklik (<code>:focus</code>), dan tombol Kirim diberi warna hijau dengan transisi lembut saat disentuh kursor mouse.</p>
+              </div>
+
+            </div>
+
+            <!-- INTERACTIVE SHOWCASE: SEBELUM VS SESUDAH CSS -->
+            <div class="showcase-section-box">
+              <div class="showcase-header">
+                <div class="showcase-title-group">
+                  <span class="showcase-icon">✨</span>
+                  <div>
+                    <h4>Laboratorium Komparasi: Sebelum vs Sesudah CSS</h4>
+                    <p>Klik tombol di bawah untuk melihat perbedaan drastis antara kode HTML polos dengan kode yang telah diberi sentuhan CSS:</p>
+                  </div>
+                </div>
+
+                <div class="showcase-cta-actions">
+                  <button class="btn btn-sm btn-editor-cta" onclick="openDedenInEditor()">
+                    <span>🚀 Buka &amp; Coba di Editor Kode</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Switcher Tabs Komparasi Trio Lengkap (HTML + CSS + JS) -->
+              <div class="showcase-tabs-bar">
+                <button class="showcase-tab-btn active" id="btnShowcaseAfter" onclick="switchDedenCaseTab('after')">
+                  <span class="tab-dot dot-green"></span> 🟢 Trio Lengkap: HTML + CSS + JS Interaktif
+                </button>
+                <button class="showcase-tab-btn" id="btnShowcaseBefore" onclick="switchDedenCaseTab('before')">
+                  <span class="tab-dot dot-red"></span> 🔴 Sebelum CSS &amp; JS (HTML Polos Bawaan)
+                </button>
+                <button class="showcase-tab-btn" id="btnShowcaseHtml" onclick="switchDedenCaseTab('html')">
+                  <span class="tab-dot dot-blue"></span> 📄 Kode HTML
+                </button>
+                <button class="showcase-tab-btn" id="btnShowcaseCss" onclick="switchDedenCaseTab('css')">
+                  <span class="tab-dot dot-purple"></span> 🎨 Kode style.css
+                </button>
+                <button class="showcase-tab-btn" id="btnShowcaseJs" onclick="switchDedenCaseTab('js')">
+                  <span class="tab-dot dot-yellow"></span> ⚡ Kode script.js (Aksi Interaktif)
+                </button>
+              </div>
+
+              <!-- Konten Showcase 1: Sesudah CSS (Default Active) -->
+              <div class="showcase-panel active" id="panelCaseAfter">
+                <div class="mockup-browser-window">
+                  <div class="mock-browser-top">
+                    <span class="mock-dot d-red"></span>
+                    <span class="mock-dot d-yellow"></span>
+                    <span class="mock-dot d-green"></span>
+                    <span class="mock-address">https://mtsn5sumedang.sch.id/biodata-deden-juliandi.html</span>
+                    <span class="mock-badge-success">✨ DENGAN CSS</span>
+                  </div>
+                  <div class="mock-browser-body">
+                    <!-- Rendered Beautiful Output -->
+                    <iframe id="iframeCaseAfter" class="case-preview-frame" title="Hasil Setelah CSS"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Konten Showcase 2: Sebelum CSS -->
+              <div class="showcase-panel" id="panelCaseBefore" style="display: none;">
+                <div class="mockup-browser-window">
+                  <div class="mock-browser-top">
+                    <span class="mock-dot d-red"></span>
+                    <span class="mock-dot d-yellow"></span>
+                    <span class="mock-dot d-green"></span>
+                    <span class="mock-address">http://localhost/biodata-polos.html</span>
+                    <span class="mock-badge-raw">⚠️ POLOS TANPA CSS</span>
+                  </div>
+                  <div class="mock-browser-body">
+                    <!-- Rendered Raw Output -->
+                    <iframe id="iframeCaseBefore" class="case-preview-frame" title="Hasil Sebelum CSS"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Konten Showcase 3: Kode HTML Asli -->
+              <div class="showcase-panel" id="panelCaseHtml" style="display: none;">
+                <div class="code-view-container">
+                  <div class="code-view-top">
+                    <span>📄 index.html (Kode Asli Siswa MTsN 5 Sumedang)</span>
+                    <button class="btn-copy-code" onclick="copyDedenCode('html')">📋 Salin HTML</button>
+                  </div>
+                  <pre class="code-view-content"><code id="codeTextHtml">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Belajar HTML&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Biodata&lt;/h1&gt;
+    &lt;p&gt;Saya Deden Juliandi siswa kelas 9 di MTsN 5 Sumedang &lt;/p&gt;
+    &lt;a href="https://chatgpt.com/"&gt;Masuk ChatGpt&lt;/a&gt;&lt;br&gt;
+    &lt;img src="gambar.png" alt="Foto Kamad MTsN 5 Sumedang" width="10%"&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;h3&gt;Hobbi : &lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Badminton&lt;/li&gt;
+        &lt;li&gt;Baca Buku&lt;/li&gt;
+        &lt;li&gt;Menyanyi&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3&gt;Cita-Cita : &lt;/h3&gt;
+    &lt;ol&gt;
+        &lt;li&gt;CEO Media Grup&lt;/li&gt;
+        &lt;li&gt;Chef&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;h3&gt;Riwayat Pendidikan : &lt;/h3&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;No&lt;/th&gt;
+            &lt;th&gt;Nama Sekolah&lt;/th&gt;
+            &lt;th&gt;Tahun&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;1&lt;/td&gt;
+            &lt;td&gt;TK. Bhayangkari 1&lt;/td&gt;
+            &lt;td&gt;2012-2014&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2&lt;/td&gt;
+            &lt;td&gt;SDN Ujungjaya 1&lt;/td&gt;
+            &lt;td&gt;2014-2020&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    &lt;form&gt;
+        &lt;label&gt;Nama : &lt;/label&gt;
+        &lt;input type="text"&gt;&lt;br&gt;
+        &lt;label&gt;Kelas : &lt;/label&gt;
+        &lt;input type="text"&gt;&lt;br&gt;
+        &lt;label&gt;Alamat : &lt;/label&gt;
+        &lt;input type="text"&gt;&lt;br&gt;
+        &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;p&gt;Merapihkan Form&lt;/p&gt;
+    &lt;form&gt;
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Nama&lt;/td&gt;
+                &lt;td&gt;:&lt;/td&gt;
+                &lt;td&gt;&lt;input type="text"&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Kelas&lt;/td&gt;
+                &lt;td&gt;:&lt;/td&gt;
+                &lt;td&gt;&lt;input type="text"&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Alamat&lt;/td&gt;
+                &lt;td&gt;:&lt;/td&gt;
+                &lt;td&gt;&lt;input type="text"&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;button type="submit"&gt;Kirim&lt;/button&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+              </div>
+
+              <!-- Konten Showcase 4: Kode CSS Lengkap -->
+              <div class="showcase-panel" id="panelCaseCss" style="display: none;">
+                <div class="code-view-container">
+                  <div class="code-view-top">
+                    <span>🎨 style.css (Kode CSS untuk Mempercantik Biodata Deden)</span>
+                    <button class="btn-copy-code" onclick="copyDedenCode('css')">📋 Salin style.css</button>
+                  </div>
+                  <pre class="code-view-content"><code id="codeTextCss">/* ==========================================================================
+   STYLE.CSS UNTUK MEMPERCANTIK BIODATA DEDEN JULIANDI (MTSN 5 SUMEDANG)
+   ========================================================================== */
+
+/* 1. Atur Dasar Halaman (Background lembut & font bersih) */
+body {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+/* 2. Judul Utama Biodata */
+h1 {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Sub-Judul (Hobbi, Cita-Cita, Riwayat Pendidikan) */
+h3 {
+    color: #0f172a;
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Paragraf Keterangan */
+p {
+    font-size: 15px;
+    color: #475569;
+}
+
+/* 3. Menyulap Link Menjadi Tombol ChatGPT Keren */
+a {
+    display: inline-block;
+    background-color: #10a37f; /* Warna Hijau Khas ChatGPT */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(16, 163, 127, 0.25);
+    transition: all 0.2s ease;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+a:hover {
+    background-color: #0d8a6a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(16, 163, 127, 0.35);
+}
+
+/* 4. Mempercantik Gambar Kamad */
+img {
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 10px 0;
+    background: #e2e8f0;
+}
+
+/* 5. Menata List Hobi (Unordered) & Cita-Cita (Ordered) */
+ul {
+    background-color: #fffbeb; /* Warna Kuning Pastel Hangat */
+    border-left: 4px solid #f59e0b;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin: 8px 0 16px;
+}
+
+ol {
+    background-color: #f0fdf4; /* Warna Hijau Pastel Segar */
+    border-left: 4px solid #10b981;
+    padding: 12px 30px;
+    border-radius: 8px;
+    margin: 8px 0 16px;
+}
+
+li {
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* 6. Merombak Tabel Riwayat Pendidikan Menjadi Tabel Modern */
+table {
+    width: 100%;
+    max-width: 550px;
+    border-collapse: collapse; /* Garis ganda menjadi 1 garis rapi */
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 12px 0 20px;
+    border: 1px solid #e2e8f0;
+}
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #1e3a8a; /* Biru Dongker Elegan */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc; /* Warna zebra selang-seling */
+}
+
+/* 7. Mempercantik Formulir Masukan */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button[type="submit"] {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Formulir yang dirapihkan dengan tabel */
+form table {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    background: transparent;
+}
+
+form table td {
+    border: none;
+    padding: 6px 4px;
+}
+
+form table input[type="text"] {
+    margin: 0;
+}</code></pre>
+                </div>
+              </div>
+              <!-- Konten Showcase 5: Kode JavaScript Aksi Interaktif -->
+              <div class="showcase-panel" id="panelCaseJs" style="display: none;">
+                <div class="code-view-container">
+                  <div class="code-view-top">
+                    <span>⚡ script.js (Aksi Interaktif JavaScript pada Biodata Deden)</span>
+                    <button class="btn-copy-code" onclick="copyDedenCode('js')">📋 Salin script.js</button>
+                  </div>
+                  <pre class="code-view-content"><code id="codeTextJs">/* ==========================================================================
+   SCRIPT.JS - AKSI INTERAKTIF PADA BIODATA DEDEN JULIANDI (MTSN 5 SUMEDANG)
+   ========================================================================== */
+
+// 1. Aksi Menyapa Pengunjung dengan prompt() dan Manipulasi Teks DOM
+function sapaDeden() {
+    let namaPengunjung = prompt("Halo! Siapa namamu?");
+    if (namaPengunjung && namaPengunjung.trim() !== "") {
+        let kotakSapa = document.getElementById("teksSapaan");
+        kotakSapa.innerHTML = "👋 Halo <strong>" + namaPengunjung + "</strong>! Salam hangat dari Deden Juliandi siswa kelas 9 MTsN 5 Sumedang. Senang berkenalan denganmu!";
+        kotakSapa.style.display = "block";
+    }
+}
+
+// 2. Aksi Saklar Mode Gelap / Terang (Dark Mode Toggle via JavaScript)
+function gantiModeGelap() {
+    let wadah = document.getElementById("kartuBiodata");
+    wadah.classList.toggle("mode-gelap");
+    
+    let tombol = document.getElementById("btnDarkToggle");
+    if (wadah.classList.contains("mode-gelap")) {
+        tombol.innerHTML = "☀️ Mode Terang";
+    } else {
+        tombol.innerHTML = "🌙 Mode Gelap";
+    }
+}
+
+// 3. Aksi Menambah Hobi Baru secara Dinamis ke dalam Daftar (ul)
+function tambahHobi() {
+    let hobiBaru = prompt("Masukkan hobi baru yang ingin kamu tambahkan:");
+    if (hobiBaru && hobiBaru.trim() !== "") {
+        let listHobi = document.getElementById("daftarHobi");
+        let itemBaru = document.createElement("li");
+        itemBaru.innerText = hobiBaru;
+        listHobi.appendChild(itemBaru);
+        alert("Hobi '" + hobiBaru + "' berhasil ditambahkan ke daftar! 🏸");
+    }
+}
+
+// 4. Aksi Konfirmasi Sebelum Membuka Tautan ChatGPT
+function konfirmasiChatGpt() {
+    return confirm("Kamu akan membuka AI ChatGPT untuk berdiskusi materi pelajaran bersama Deden. Buka tautan sekarang?");
+}
+
+// 5. Aksi Validasi & Pengolahan Formulir Pendaftaran dengan if...else
+function kirimFormulir(event) {
+    event.preventDefault(); // Mencegah reload halaman
+    
+    let nama = document.getElementById("inputNama").value;
+    let kelas = document.getElementById("inputKelas").value;
+    let alamat = document.getElementById("inputAlamat").value;
+    let alertBox = document.getElementById("formAlert");
+    
+    // Logika Pengambilan Keputusan dengan if...else
+    if (nama.trim() === "" || kelas.trim() === "" || alamat.trim() === "") {
+        alertBox.className = "alert-box alert-warning";
+        alertBox.innerHTML = "⚠️ <strong>Perhatian:</strong> Harap lengkapi semua kolom (Nama, Kelas, dan Alamat)!";
+        alertBox.style.display = "block";
+    } else {
+        alertBox.className = "alert-box alert-success";
+        alertBox.innerHTML = "✅ <strong>Pendaftaran Sukses!</strong> Terima kasih <strong>" + nama + "</strong> (" + kelas + ") dari " + alamat + ". Data berhasil disimpan di sistem MTsN 5 Sumedang!";
+        alertBox.style.display = "block";
+    }
+}</code></pre>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-e')">&larr; Kembali ke Topik E</button>
+              <button class="btn btn-primary" onclick="openMateriSub('materi-g')">Lanjut ke Topik G: JavaScript Dasar ⚡ &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ==================================================================
+             KONTEN MATERI G: JAVASCRIPT DASAR (MATERI BARU!)
+             ================================================================== -->
+                <!-- ==================================================================
+             KONTEN MATERI G: JAVASCRIPT DASAR & KONSEP-KONSEP PENTING
+             ================================================================== -->
+        <div id="materi-g" class="materi-content-panel">
+          <div class="content-card">
+            <div class="card-header-with-badge">
+              <span class="topic-tag tag-js">Topik G • Logika, Aksi &amp; Interaktivitas</span>
+              <h3 class="panel-topic-title">Mengenal JavaScript &amp; Konsep-Konsep Penting</h3>
+            </div>
+
+            <!-- Penjelasan Mendalam -->
+            <div class="concept-callout js-callout">
+              <span class="callout-icon">⚡</span>
+              <div>
+                <strong>Apa itu JavaScript?</strong>
+                <p>
+                  <strong>JavaScript</strong> adalah bahasa pemrograman yang digunakan untuk <strong>memberikan aksi, logika, dan interaksi</strong> pada halaman web. Tanpa JavaScript, halaman web ibarat koran atau poster yang hanya bisa dilihat dan dibaca secara pasif. Dengan JavaScript, halaman web menjadi <strong>aplikasi hidup</strong> yang bisa merespons klik mouse, menghitung nilai, memvalidasi formulir, dan menampilkan animasi interaktif!
+                </p>
+                <div class="equation-box">
+                  <span class="eq-tag-html">HTML (Kerangka)</span> + <span class="eq-tag-css">CSS (Tata Rias)</span> + <span class="eq-tag-js">JavaScript (Otak &amp; Aksi)</span> = <strong>Website Interaktif Modern!</strong> 🚀
+                </div>
+              </div>
+            </div>
+
+            <!-- Analogi Trio Web Lengkap -->
+            <div class="analogy-card">
+              <div class="analogy-header">
+                <span class="analogy-emoji">💡</span>
+                <h4>Analogi Rumah Modern (HTML + CSS + JavaScript):</h4>
+              </div>
+              <p class="analogy-text">
+                Mari kita pahami pembagian tugas ketiga teknologi web ini melalui perumpamaan rumah cerdas:
+              </p>
+              <div class="analogy-grid-3">
+                <div class="analogy-box html-analogy-box">
+                  <span class="box-icon">🧱</span>
+                  <h5>HTML: Bangunan Fisik</h5>
+                  <p>Membuat pondasi, tembok kamar, kusen pintu, dan jendela kaca.</p>
+                </div>
+                <div class="analogy-box css-analogy-box">
+                  <span class="box-icon">🎨</span>
+                  <h5>CSS: Dekorasi &amp; Cat</h5>
+                  <p>Memberi warna cat tembok, tirai jendela yang cantik, dan susunan sofa yang rapi.</p>
+                </div>
+                <div class="analogy-box js-analogy-box">
+                  <span class="box-icon">⚡</span>
+                  <h5>JavaScript: Listrik &amp; Aksi Cerdas</h5>
+                  <p>Bel pintu yang berdering saat dipencet, saklar lampu otomatis, pendingin ruangan (AC), dan pintu geser otomatis saat orang mendekat!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3 CARA MENGHUBUNGKAN JAVASCRIPT KE HTML -->
+            <h4 class="subtopic-title">3 Cara Menghubungkan JavaScript ke Dokumen HTML</h4>
+            <p class="section-desc-text">
+              Mirip seperti CSS, ada 3 cara untuk memasang kode JavaScript ke dalam dokumen web:
+            </p>
+
+            <div class="css-methods-grid">
+              
+              <!-- 1. External JS -->
+              <div class="css-method-card method-external highlight-method">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 1 (Sangat Dianjurkan) ⭐⭐⭐</span>
+                  <span class="method-tag tag-ext">STANDAR INDUSTRI</span>
+                </div>
+                <h4 class="method-title">1. External JavaScript (Berkas script.js Terpisah)</h4>
+                <p class="method-desc">
+                  Kode JavaScript ditulis di berkas terpisah berekstensi <code>.js</code> (contoh: <code>script.js</code>), lalu dihubungkan menggunakan tag <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code> sebelum tag penutup <code>&lt;/body&gt;</code>.
+                </p>
+                <div class="method-file">
+                  <div class="file-tag">File: index.html (Sebelum &lt;/body&gt;)</div>
+                  <pre class="mini-code"><code><span class="token-comment">&lt;!-- Menghubungkan file JavaScript eksternal --&gt;</span>
+<span class="token-tag">&lt;script</span> <span class="token-attr">src=</span><span class="token-val">"script.js"</span><span class="token-tag">&gt;&lt;/script&gt;</span>
+<span class="token-tag">&lt;/body&gt;</span></code></pre>
+                </div>
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Paling rapi, mudah diperbaiki, dan 1 berkas script bisa dipakai di banyak halaman web sekaligus.</div>
+                </div>
+              </div>
+
+              <!-- 2. Internal JS -->
+              <div class="css-method-card method-internal">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 2 (Khusus 1 Halaman) ⭐⭐</span>
+                  <span class="method-tag tag-int">TERTANAM DI HTML</span>
+                </div>
+                <h4 class="method-title">2. Internal JavaScript (Tag &lt;script&gt;)</h4>
+                <p class="method-desc">
+                  Kode JavaScript diletakkan langsung di dalam tag <code>&lt;script&gt; ... &lt;/script&gt;</code> di dalam dokumen HTML itu sendiri.
+                </p>
+                <div class="method-file">
+                  <div class="file-tag">File: index.html</div>
+                  <pre class="mini-code"><code><span class="token-tag">&lt;script&gt;</span>
+    <span class="token-js-func">alert</span>(<span class="token-val">"Selamat datang di web MTsN 5 Sumedang!"</span>);
+<span class="token-tag">&lt;/script&gt;</span></code></pre>
+                </div>
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Praktis untuk kode singkat tanpa perlu membuat file baru.</div>
+                </div>
+              </div>
+
+              <!-- 3. Inline JS -->
+              <div class="css-method-card method-inline">
+                <div class="method-badge-row">
+                  <span class="method-rank">Cara 3 (Event Handler Langsung) ⭐</span>
+                  <span class="method-tag tag-inl">ATRIBUT ONCLICK</span>
+                </div>
+                <h4 class="method-title">3. Inline JavaScript (Atribut Event pada Elemen)</h4>
+                <p class="method-desc">
+                  Kode JavaScript ditulis langsung menempel pada atribut tag HTML seperti <code>onclick="..."</code>.
+                </p>
+                <div class="method-file">
+                  <div class="file-tag">File: index.html</div>
+                  <pre class="mini-code"><code><span class="token-tag">&lt;button</span> <span class="token-attr">onclick=</span><span class="token-val">"alert('Tombol berhasil diklik!')"</span><span class="token-tag">&gt;</span>Klik Saya<span class="token-tag">&lt;/button&gt;</span></code></pre>
+                </div>
+                <div class="pros-cons-box">
+                  <div class="pro-item">✅ <strong>Kelebihan:</strong> Cepat untuk percobaan satu tombol sederhana.</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 6 KONSEP PENTING JAVASCRIPT UNTUK SISWA SMP -->
+            <div class="subtopic-divider">
+              <h4 class="subtopic-title">6 Konsep Kunci JavaScript yang Wajib Dikuasai</h4>
+              <p class="section-desc-text">
+                Berikut adalah materi inti JavaScript yang menjadi bekal penting dalam membangun interaksi website:
+              </p>
+            </div>
+
+            <div class="elements-list-vertical">
+              
+              <!-- 1. Variabel -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">1</span>
+                  <h4>Variabel (let &amp; const)</h4>
+                </div>
+                <p class="element-text">
+                  <strong>Variabel</strong> adalah <strong>wadah atau kotak berlabel</strong> di memori komputer untuk menyimpan data (seperti nama, nilai, atau status) agar bisa digunakan berulang kali.
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">// let: nilai data bisa diubah nanti</span>
+<span class="token-js-kw">let</span> nama = <span class="token-val">"Deden Juliandi"</span>;
+<span class="token-js-kw">let</span> umur = <span class="token-val">15</span>;
+<span class="token-js-kw">let</span> apakahLulus = <span class="token-val">true</span>;
+
+<span class="token-comment">// const: nilai data tetap (tidak boleh diubah)</span>
+<span class="token-js-kw">const</span> namaSekolah = <span class="token-val">"MTsN 5 Sumedang"</span>;</code></pre>
+                  <div class="mini-preview">
+                    <div class="variable-box-visual">
+                      <div class="var-box">
+                        <span class="var-label">Kotak let: nama</span>
+                        <span class="var-val">"Deden Juliandi"</span>
+                      </div>
+                      <div class="var-box">
+                        <span class="var-label">Kotak const: namaSekolah</span>
+                        <span class="var-val">"MTsN 5 Sumedang"</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="element-note">
+                  💡 <strong>Tipe Data Dasar:</strong> <em>String</em> (teks berapit tanda kutip), <em>Number</em> (angka tanpa kutip), dan <em>Boolean</em> (nilai kebenaran <code>true</code> atau <code>false</code>).
+                </div>
+              </div>
+
+              <!-- 2. Dialog Interaktif: alert, prompt, confirm, console.log -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">2</span>
+                  <h4>Dialog Interaktif Pengguna &amp; console.log()</h4>
+                </div>
+                <p class="element-text">
+                  JavaScript menyediakan 3 jendela dialog pop-up bawaan browser untuk berkomunikasi dengan pengguna, serta <code>console.log()</code> untuk catatan programmer:
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">// 1. alert: menampilkan pesan pengumuman</span>
+<span class="token-js-func">alert</span>(<span class="token-val">"Ujian Informatika dimulai!"</span>);
+
+<span class="token-comment">// 2. prompt: meminta masukan teks/nama</span>
+<span class="token-js-kw">let</span> nama = <span class="token-js-func">prompt</span>(<span class="token-val">"Siapa nama lengkapmu?"</span>);
+
+<span class="token-comment">// 3. confirm: meminta persetujuan OK/Batal (true/false)</span>
+<span class="token-js-kw">let</span> yakin = <span class="token-js-func">confirm</span>(<span class="token-val">"Apakah kamu yakin ingin mengirim data?"</span>);
+
+<span class="token-comment">// 4. console.log: catatan programmer di konsol</span>
+console.<span class="token-js-func">log</span>(<span class="token-val">"Data siswa telah diperiksa"</span>);</code></pre>
+                  <div class="mini-preview">
+                    <div style="background: white; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; text-align: center;">
+                      <strong style="font-size: 13px; color: #1e293b; display: block; margin-bottom: 8px;">Coba Dialog Interaktif Ini:</strong>
+                      <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-sm btn-outline" onclick="alert('Halo! Ini adalah contoh kotak alert()')">Test alert()</button>
+                        <button type="button" class="btn btn-sm btn-outline" onclick="let n = prompt('Masukkan namamu:'); if(n) alert('Halo, ' + n + '!')">Test prompt()</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Fungsi (Function) -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">3</span>
+                  <h4>Fungsi (Function)</h4>
+                </div>
+                <p class="element-text">
+                  <strong>Fungsi</strong> adalah <strong>kumpulan perintah yang dibungkus dan diberi nama</strong>, agar bisa dijalankan berkali-kali kapan pun kita membutuhkannya.
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">// Membuat fungsi</span>
+<span class="token-js-kw">function</span> <span class="token-js-func">sapaSiswa</span>(nama) {
+    <span class="token-js-func">alert</span>(<span class="token-val">"Selamat datang di kelas Informatika, "</span> + nama + <span class="token-val">"!"</span>);
+}
+
+<span class="token-comment">// Memanggil fungsi</span>
+<span class="token-js-func">sapaSiswa</span>(<span class="token-val">"Andi"</span>);
+<span class="token-js-func">sapaSiswa</span>(<span class="token-val">"Siti"</span>);</code></pre>
+                  <div class="mini-preview" style="text-align: center; display: flex; align-items: center; justify-content: center;">
+                    <button type="button" class="btn-demo-hover" onclick="alert('Selamat datang di kelas Informatika MTsN 5 Sumedang!')">
+                      Panggil Fungsi sapaSiswa() 🚀
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Event Handler (onclick) -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">4</span>
+                  <h4>Event Handler (onclick)</h4>
+                </div>
+                <p class="element-text">
+                  <strong>Event</strong> adalah peristiwa yang terjadi di halaman web saat pengguna berinteraksi (misalnya: mengeklik tombol, mengetik di form, atau menggerakkan mouse).
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">&lt;!-- Hubungkan klik tombol dengan fungsi JS --&gt;</span>
+<span class="token-tag">&lt;button</span> <span class="token-attr">onclick=</span><span class="token-val">"sapaDeden()"</span><span class="token-tag">&gt;</span>
+    👋 Sapa Deden!
+<span class="token-tag">&lt;/button&gt;</span></code></pre>
+                  <div class="mini-preview" style="text-align: center;">
+                    <div style="font-size: 12px; color: #64748b; margin-bottom: 6px;">Saat tombol diklik, browser akan langsung memanggil fungsi <code>sapaDeden()</code>!</div>
+                    <button type="button" class="btn btn-sm btn-primary" onclick="alert('Event onclick berhasil memicu fungsi JavaScript! ✨')">
+                      Klik Tombol Ini
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. DOM Manipulation Sederhana -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">5</span>
+                  <h4>Manipulasi DOM Sederhana (Jembatan JS ke HTML &amp; CSS)</h4>
+                </div>
+                <p class="element-text">
+                  <strong>DOM</strong> (<em>Document Object Model</em>) adalah cara JavaScript mengakses dan mengubah isi teks atau gaya CSS pada halaman web secara langsung tanpa perlu mereload halaman!
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-comment">// 1. Memilih elemen HTML berdasarkan ID-nya</span>
+<span class="token-js-kw">let</span> judul = document.<span class="token-js-func">getElementById</span>(<span class="token-val">"judulUtama"</span>);
+
+<span class="token-comment">// 2. Mengubah teks elemen dari JavaScript</span>
+judul.<span class="token-prop">innerText</span> = <span class="token-val">"Judul Telah Berubah!"</span>;
+
+<span class="token-comment">// 3. Mengubah gaya CSS langsung dari JavaScript</span>
+judul.<span class="token-prop">style</span>.<span class="token-prop">color</span> = <span class="token-val">"green"</span>;
+
+<span class="token-comment">// 4. Menghidupkan Mode Gelap dengan toggle class</span>
+document.body.<span class="token-prop">classList</span>.<span class="token-js-func">toggle</span>(<span class="token-val">"mode-gelap"</span>);</code></pre>
+                  <div class="mini-preview">
+                    <div id="demoDomBox" style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 12px; border-radius: 8px; text-align: center;">
+                      <div id="demoDomText" style="font-weight: bold; color: #1e40af; margin-bottom: 8px;">Teks Asli Sebelum Diubah</div>
+                      <button type="button" class="btn btn-sm btn-secondary" onclick="document.getElementById('demoDomText').innerText = '🎉 Teks Berhasil Diubah oleh JS!'; document.getElementById('demoDomText').style.color = '#15803d';">
+                        Ubah Teks dengan DOM
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 6. Percabangan Logika (if...else) -->
+              <div class="element-box js-element-box">
+                <div class="element-header">
+                  <span class="element-num js-num">6</span>
+                  <h4>Percabangan Logika (if...else)</h4>
+                </div>
+                <p class="element-text">
+                  Percabangan <code>if...else</code> digunakan untuk <strong>mengambil keputusan berdasarkan kondisi</strong> tertentu (jika kondisi benar lakukan A, jika salah lakukan B).
+                </p>
+                <div class="element-demo-grid">
+                  <pre class="mini-code"><code><span class="token-js-kw">let</span> nilai = <span class="token-val">85</span>;
+
+<span class="token-js-kw">if</span> (nilai &gt;= <span class="token-val">75</span>) {
+    console.<span class="token-js-func">log</span>(<span class="token-val">"Selamat, kamu Lulus! 🎉"</span>);
+} <span class="token-js-kw">else</span> {
+    console.<span class="token-js-func">log</span>(<span class="token-val">"Ayo semangat belajar lagi ya! 📚"</span>);
+}</code></pre>
+                  <div class="mini-preview">
+                    <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; text-align: center;">
+                      <span class="flow-step" style="display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; margin-bottom: 6px;">Kondisi: Nilai &gt;= 75 ?</span>
+                      <div style="display: flex; gap: 8px; justify-content: center; font-size: 12px;">
+                        <span style="color: #15803d; font-weight: bold;">Benar &rarr; LULUS</span>
+                        <span style="color: #b91c1c; font-weight: bold;">Salah &rarr; REMEDIAL</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Virtual Console Runner -->
+            <div class="virtual-console-wrapper">
+              <div class="sim-header">
+                <div class="sim-title">
+                  <span class="sim-icon">📟</span>
+                  <h4>Terminal Simulator JavaScript Siswa</h4>
+                </div>
+                <span class="sim-badge">Live Runner</span>
+              </div>
+              <p class="sim-desc">
+                Pilih salah satu kode contoh di bawah ini, lalu klik tombol <strong>"Jalankan Kode"</strong> untuk melihat hasil eksekusinya di layar terminal:
+              </p>
+
+              <div class="sim-body-grid">
+                <div class="sim-controls-col">
+                  <label class="control-label">Pilih Contoh Kode:</label>
+                  <div class="sim-scenario-selector">
+                    <button class="sim-preset-btn active" id="btnJsPreset1" onclick="selectJsPreset(1)">
+                      1. Variabel &amp; Penjumlahan
+                    </button>
+                    <button class="sim-preset-btn" id="btnJsPreset2" onclick="selectJsPreset(2)">
+                      2. Percabangan if Kelulusan
+                    </button>
+                    <button class="sim-preset-btn" id="btnJsPreset3" onclick="selectJsPreset(3)">
+                      3. Input prompt() &amp; Sapaan
+                    </button>
+                  </div>
+
+                  <div class="sim-action-row" style="margin-top: 15px;">
+                    <button class="btn btn-primary" id="btnRunJsPreset" onclick="runJsPreset()">
+                      ▶ Jalankan Kode
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearJsConsole()">
+                      🧹 Bersihkan
+                    </button>
+                  </div>
+                </div>
+
+                <div class="sim-preview-col">
+                  <div class="code-preview-box">
+                    <div class="code-box-head">Kode JavaScript:</div>
+                    <pre class="code-box-content"><code id="jsPresetCodeDisplay">let nama = "Andi";
+let nilaiTugas = 80;
+let nilaiUjian = 90;
+let rataRata = (nilaiTugas + nilaiUjian) / 2;
+
+console.log("Nama: " + nama);
+console.log("Nilai Rata-rata: " + rataRata);</code></pre>
+                  </div>
+
+                  <div class="terminal-screen" style="margin-top: 10px;">
+                    <div class="terminal-header">
+                      <div class="term-dots">
+                        <span class="term-dot dot-red"></span>
+                        <span class="term-dot dot-yellow"></span>
+                        <span class="term-dot dot-green"></span>
+                      </div>
+                      <span class="term-title">Console Output</span>
+                    </div>
+                    <div class="terminal-body" id="jsConsoleOutput">
+                      <div class="term-line info-line">> Konsol siap menerima perintah...</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="materi-navigation-footer">
+              <button class="btn btn-outline" onclick="openMateriSub('materi-f')">&larr; Kembali ke Topik F (Studi Kasus)</button>
+              <button class="btn btn-primary" onclick="navigateTo('html-css')">Lanjut ke Web Lab &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3: MENU WEB LAB (HTML & CSS)
+         ====================================================================== -->
+    <section id="html-css" class="page-section">
+      <div class="container">
+        
+        <div class="section-heading-box">
+          <div class="section-pill">💻 Laboratorium Referensi</div>
+          <h2 class="section-title">Kartu Interaktif Web Lab</h2>
+          <p class="section-subtitle">
+            Pelajari setiap konsep HTML, CSS, dan JavaScript melalui kartu khusus yang menyajikan nama konsep, pengertian, contoh kode, dan hasil eksekusi langsung.
+          </p>
+        </div>
+
+        <!-- Switch Tab: HTML vs CSS vs JAVASCRIPT -->
+        <div class="lab-tab-switch">
+          <button class="lab-toggle-btn active html-tab-btn" id="btnLabHtml" onclick="switchLabTab('html')">
+            <span class="lab-btn-icon">💻</span>
+            <span class="lab-btn-text">HTML (7 Elemen)</span>
+          </button>
+          <button class="lab-toggle-btn css-tab-btn" id="btnLabCss" onclick="switchLabTab('css')">
+            <span class="lab-btn-icon">🎨</span>
+            <span class="lab-btn-text">CSS (8 Properti)</span>
+          </button>
+          <button class="lab-toggle-btn js-tab-btn" id="btnLabJs" onclick="switchLabTab('js')">
+            <span class="lab-btn-icon">⚡</span>
+            <span class="lab-btn-text">JavaScript (4 Konsep)</span>
+          </button>
+        </div>
+
+        <!-- =================== KUMPULAN KARTU HTML (7 CARD) =================== -->
+        <div id="labHtmlSection" class="lab-deck active">
+          <div class="deck-grid">
+            
+            <!-- 1. Heading -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">01</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Heading (Judul)</h3>
+              <p class="concept-definition">Membuat judul dokumen bertingkat dari h1 (terbesar) hingga h3 (subjudul kecil).</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;h1&gt;</span>Judul Utama<span class="token-tag">&lt;/h1&gt;</span>
+<span class="token-tag">&lt;h2&gt;</span>Subjudul Materi<span class="token-tag">&lt;/h2&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <h1 style="font-size: 20px; color: #1e293b; margin-bottom: 2px;">Judul Utama</h1>
+                  <h2 style="font-size: 15px; color: #475569;">Subjudul Materi</h2>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> h1 untuk judul utama, h2 untuk subjudul.</p>
+            </div>
+
+            <!-- 2. Paragraph -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">02</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Paragraph (Paragraf)</h3>
+              <p class="concept-definition">Membuat teks bacaan dalam bentuk paragraf yang rapi dan terpisah.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;p&gt;</span>Halo teman-teman, hari ini kita belajar coding web di sekolah.<span class="token-tag">&lt;/p&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <p style="font-size: 13px; color: #334155; line-height: 1.5;">Halo teman-teman, hari ini kita belajar coding web di sekolah.</p>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Paragraf otomatis menambahkan jarak spasi di bawahnya.</p>
+            </div>
+
+            <!-- 3. Link -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">03</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Link (Tautan)</h3>
+              <p class="concept-definition">Menghubungkan teks ke alamat website lain menggunakan tag <code>&lt;a&gt;</code>.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;a</span> <span class="token-attr">href=</span><span class="token-val">"https://kemdikbud.go.id"</span><span class="token-tag">&gt;</span>
+  Kunjungi Web Kemdikbud
+<span class="token-tag">&lt;/a&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <a href="javascript:void(0)" style="color: #2563eb; text-decoration: underline; font-weight: bold; font-size: 13px;">Kunjungi Web Kemdikbud 🌐</a>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Atribut <code>href</code> menunjukkan alamat web yang dituju.</p>
+            </div>
+
+            <!-- 4. Image -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">04</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Image (Gambar)</h3>
+              <p class="concept-definition">Menampilkan foto atau gambar di halaman web dengan tag <code>&lt;img&gt;</code>.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;img</span> <span class="token-attr">src=</span><span class="token-val">"sekolah.jpg"</span> <span class="token-attr">alt=</span><span class="token-val">"Gedung SMP"</span><span class="token-tag">&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="display: flex; align-items: center; justify-content: center;">
+                  <div style="background: #fef08a; color: #854d0e; padding: 8px 14px; border-radius: 6px; font-weight: bold; font-size: 12px;">
+                    🖼️ [Gambar: Gedung SMP]
+                  </div>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> <code>src</code> = nama file gambar, <code>alt</code> = teks pengganti.</p>
+            </div>
+
+            <!-- 5. List -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">05</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">List (Daftar)</h3>
+              <p class="concept-definition">Membuat daftar berbutir titik (ul) atau berbutir nomor angka (ol).</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;ul&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>Membaca Buku<span class="token-tag">&lt;/li&gt;</span>
+  <span class="token-tag">&lt;li&gt;</span>Bermain Bola<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ul&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <ul style="padding-left: 18px; font-size: 13px; color: #334155;">
+                    <li>Membaca Buku</li>
+                    <li>Bermain Bola</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> <code>li</code> adalah butir di dalam daftar.</p>
+            </div>
+
+            <!-- 6. Table -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">06</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Table (Tabel)</h3>
+              <p class="concept-definition">Menampilkan data dalam baris (tr) dan kolom (th/td).</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;table&gt;</span>
+  <span class="token-tag">&lt;tr&gt;&lt;th&gt;</span>Nama<span class="token-tag">&lt;/th&gt;&lt;th&gt;</span>Kelas<span class="token-tag">&lt;/th&gt;&lt;/tr&gt;</span>
+  <span class="token-tag">&lt;tr&gt;&lt;td&gt;</span>Andi<span class="token-tag">&lt;/td&gt;</span><span class="token-tag">&lt;td&gt;</span>8A<span class="token-tag">&lt;/td&gt;</span><span class="token-tag">&lt;/tr&gt;</span>
+<span class="token-tag">&lt;/table&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <table class="sample-demo-table" style="font-size: 11px;">
+                    <tr><th>Nama</th><th>Kelas</th></tr>
+                    <tr><td>Andi</td><td>8A</td></tr>
+                  </table>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> <code>th</code> untuk judul kolom, <code>td</code> untuk data.</p>
+            </div>
+
+            <!-- 7. Form -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">07</span>
+                <span class="concept-tag tag-html">HTML</span>
+              </div>
+              <h3 class="concept-name">Form (Formulir)</h3>
+              <p class="concept-definition">Membuat formulir untuk menerima masukan nama dan tombol kirim.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-tag">&lt;form&gt;</span>
+  <span class="token-tag">&lt;label&gt;</span>Nama:<span class="token-tag">&lt;/label&gt;</span>
+  <span class="token-tag">&lt;input</span> <span class="token-attr">type=</span><span class="token-val">"text"</span><span class="token-tag">&gt;</span>
+  <span class="token-tag">&lt;button&gt;</span>Kirim<span class="token-tag">&lt;/button&gt;</span>
+<span class="token-tag">&lt;/form&gt;</span></code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview">
+                  <label style="font-size: 11px; font-weight: bold;">Nama:</label>
+                  <input type="text" placeholder="Ketik nama..." style="font-size: 11px; padding: 3px 6px; width: 60%; margin-right: 4px;" readonly value="Rudi">
+                  <button type="button" style="font-size: 11px; padding: 3px 8px; background: #2563eb; color: #fff; border:none; border-radius: 3px;">Kirim</button>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> <code>input</code> tempat mengetik, <code>button</code> tombol aksi.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- =================== KUMPULAN KARTU CSS (8 CARD) =================== -->
+        <div id="labCssSection" class="lab-deck">
+          <div class="deck-grid">
+            
+            <!-- 1. Color -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">01</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Color (Warna Teks)</h3>
+              <p class="concept-definition">Mengubah warna huruf atau tulisan teks.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">h1</span> {
+    <span class="token-prop">color</span>: <span class="token-val">blue</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="text-align: center;">
+                  <span style="color: blue; font-weight: bold; font-size: 16px;">Teks Berwarna Biru</span>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Bisa gunakan nama warna: <code>red</code>, <code>green</code>, <code>blue</code>, dll.</p>
+            </div>
+
+            <!-- 2. Background -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">02</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Background Color</h3>
+              <p class="concept-definition">Mengubah warna latar belakang elemen atau halaman web.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">body</span> {
+    <span class="token-prop">background-color</span>: <span class="token-val">lightblue</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="background-color: lightblue; padding: 8px; border-radius: 6px; text-align: center; color: #0369a1; font-weight: bold;">
+                  Background Lightblue
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Membuat elemen lebih menarik dan hidup.</p>
+            </div>
+
+            <!-- 3. Font Size -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">03</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Font Size (Ukuran Teks)</h3>
+              <p class="concept-definition">Mengatur besar kecilnya ukuran teks menggunakan satuan piksel (px).</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">h1</span> {
+    <span class="token-prop">font-size</span>: <span class="token-val">30px</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="text-align: center;">
+                  <span style="font-size: 20px; font-weight: bold; color: #1e293b;">Ukuran Teks 30px</span>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Semakin besar nilai px, semakin besar pula teksnya.</p>
+            </div>
+
+            <!-- 4. Text Align -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">04</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Text Align (Posisi Teks)</h3>
+              <p class="concept-definition">Mengatur posisi teks: left (kiri), center (tengah), atau right (kanan).</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">h1</span> {
+    <span class="token-prop">text-align</span>: <span class="token-val">center</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="text-align: center;">
+                  <div style="background: #e2e8f0; padding: 6px; border-radius: 4px; font-weight: bold;">Judul di Tengah Layar</div>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Sangat sering digunakan untuk judul profil atau artikel.</p>
+            </div>
+
+            <!-- 5. Border -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">05</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Border (Garis Tepi)</h3>
+              <p class="concept-definition">Membuat garis bingkai tepi di sekeliling elemen.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">div</span> {
+    <span class="token-prop">border</span>: <span class="token-val">2px solid black</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="border: 2px solid black; padding: 8px; border-radius: 6px; text-align: center; font-weight: bold;">
+                  Kotak Berbingkai 2px Solid
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> <code>2px</code> = tebal, <code>solid</code> = garis utuh, <code>black</code> = warna.</p>
+            </div>
+
+            <!-- 6. Margin -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">06</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Margin (Jarak Luar)</h3>
+              <p class="concept-definition">Jarak bagian luar suatu elemen dengan elemen lainnya.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">div</span> {
+    <span class="token-prop">margin</span>: <span class="token-val">20px</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="background: #fff7ed; border: 1px dashed #f97316; padding: 6px; text-align: center;">
+                  <span style="background: #ffedd5; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; color: #c2410c;">↔️ Memberi Jarak ke Luar</span>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Mencegah kartu atau kotak saling bertabrakan.</p>
+            </div>
+
+            <!-- 7. Padding -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">07</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Padding (Jarak Dalam)</h3>
+              <p class="concept-definition">Jarak antara isi tulisan dengan batas pinggir elemen.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">div</span> {
+    <span class="token-prop">padding</span>: <span class="token-val">20px</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="border: 2px solid #3b82f6; padding: 14px; text-align: center; background: #eff6ff;">
+                  <span style="font-size: 12px; font-weight: bold; color: #1d4ed8;">Teks Lebih Lega & Empuk</span>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Membuat tombol dan kartu tampak luas dan nyaman dilihat.</p>
+            </div>
+
+            <!-- 8. Width & Height -->
+            <div class="concept-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">08</span>
+                <span class="concept-tag tag-css">CSS</span>
+              </div>
+              <h3 class="concept-name">Width &amp; Height</h3>
+              <p class="concept-definition">Mengatur ukuran lebar (width) dan tinggi (height) sebuah elemen.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-selector">div</span> {
+    <span class="token-prop">width</span>: <span class="token-val">300px</span>;
+    <span class="token-prop">height</span>: <span class="token-val">150px</span>;
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="text-align: center;">
+                  <div style="display: inline-block; width: 140px; height: 45px; background: #e0e7ff; border: 1px solid #4f46e5; border-radius: 4px; line-height: 45px; font-size: 11px; font-weight: bold; color: #4338ca;">
+                    Lebar x Tinggi
+                  </div>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Penjelasan:</strong> Sangat penting untuk menentukan proporsi wadah dan foto.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- =================== KUMPULAN KARTU JAVASCRIPT (4 CARD BARU!) =================== -->
+        <div id="labJsSection" class="lab-deck">
+          <div class="deck-grid">
+            
+            <!-- 1. Variabel -->
+            <div class="concept-deck-card js-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">01</span>
+                <span class="concept-tag tag-js">JAVASCRIPT</span>
+              </div>
+              <h3 class="concept-name">Variabel (let)</h3>
+              <p class="concept-definition">Wadah penyimpanan data (teks, angka) menggunakan kata kunci <code>let</code>.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-js-kw">let</span> nama = <span class="token-val">"Budi"</span>;
+<span class="token-js-kw">let</span> usia = <span class="token-val">14</span>;</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="text-align: center;">
+                  <span style="background: #fef3c7; color: #92400e; padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 13px;">
+                    nama = "Budi" (Tersimpan)
+                  </span>
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Tips:</strong> Nilai variabel dapat dipanggil kembali kapan saja saat program berjalan.</p>
+            </div>
+
+            <!-- 2. console.log() -->
+            <div class="concept-deck-card js-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">02</span>
+                <span class="concept-tag tag-js">JAVASCRIPT</span>
+              </div>
+              <h3 class="concept-name">console.log()</h3>
+              <p class="concept-definition">Mencetak pesan teks atau hasil hitungan ke layar konsol browser.</p>
+              <div class="concept-code-box">
+                <pre><code>console.<span class="token-js-func">log</span>(<span class="token-val">"Halo Informatika!"</span>);</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="background: #0f172a; color: #38bdf8; font-family: monospace; padding: 8px; border-radius: 6px; font-size: 12px;">
+                  &gt; Halo Informatika!
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Tips:</strong> Sangat membantu untuk melacak apakah kodemu bekerja dengan benar.</p>
+            </div>
+
+            <!-- 3. prompt() -->
+            <div class="concept-deck-card js-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">03</span>
+                <span class="concept-tag tag-js">JAVASCRIPT</span>
+              </div>
+              <h3 class="concept-name">prompt()</h3>
+              <p class="concept-definition">Memunculkan kotak dialog popup untuk meminta masukan ketikan dari siswa.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-js-kw">let</span> hobi = <span class="token-js-func">prompt</span>(<span class="token-val">"Apa hobimu?"</span>);</code></pre>
+              </div>
+              <div class="concept-preview-box" style="text-align: center;">
+                <button class="btn btn-sm btn-outline" onclick="demoLabPrompt()">
+                  💬 Coba prompt() Sekarang
+                </button>
+              </div>
+              <p class="concept-tip">💡 <strong>Tips:</strong> Data yang diketikkan pengguna akan disimpan ke variabel <code>hobi</code>.</p>
+            </div>
+
+            <!-- 4. if Sederhana -->
+            <div class="concept-deck-card js-deck-card">
+              <div class="deck-card-top">
+                <span class="concept-num">04</span>
+                <span class="concept-tag tag-js">JAVASCRIPT</span>
+              </div>
+              <h3 class="concept-name">if Sederhana</h3>
+              <p class="concept-definition">Mengeksekusi baris kode hanya jika suatu kondisi atau syarat bernilai benar.</p>
+              <div class="concept-code-box">
+                <pre><code><span class="token-js-kw">if</span> (skor &gt;= <span class="token-val">75</span>) {
+    console.<span class="token-js-func">log</span>(<span class="token-val">"Kamu Lulus!"</span>);
+}</code></pre>
+              </div>
+              <div class="concept-preview-box">
+                <div class="mini-live-preview" style="background: #ecfdf5; border: 1px solid #10b981; color: #065f46; font-size: 12px; font-weight: bold; padding: 8px; border-radius: 6px; text-align: center;">
+                  Syarat Benar &rarr; "Kamu Lulus!"
+                </div>
+              </div>
+              <p class="concept-tip">💡 <strong>Tips:</strong> Dasar dari pembuatan game dan aplikasi cerdas di web!</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lab-footer-cta">
+          <button class="btn btn-primary" onclick="navigateTo('aktivitas')">
+            Uji Pemahamanmu di Menu Aktivitas! 🎮
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================
+         SECTION 4: EDITOR KODE HTML INTERAKTIF (IN-BROWSER PLAYGROUND)
+         ======================================================================== -->
+    <section id="editor" class="page-section">
+      <div class="container">
+        
+        <!-- Section Hero -->
+        <div class="section-hero editor-hero">
+          <div class="section-tag-badge">💻 Laboratorium Coding Mandiri</div>
+          <h1 class="section-main-title">Editor Kode HTML Interaktif</h1>
+          <p class="section-subtitle">
+            Ketik atau ubah kode HTML di panel editor sebelah kiri, klik tombol <strong>"▶ Jalankan Kode"</strong>, dan saksikan hasilnya seketika di layar peramban sebelah kanan!
+          </p>
+        </div>
+
+        <!-- Toolbar Snippet Template Cepat -->
+        <div class="editor-toolbar-card">
+          <div class="editor-toolbar-header">
+            <div class="toolbar-title-group">
+              <span class="toolbar-icon">⚡</span>
+              <div>
+                <h3 class="toolbar-title">Pilih Template Latihan Cepat:</h3>
+                <p class="toolbar-desc">Klik salah satu tombol di bawah untuk langsung mencoba contoh kode!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-snippets-bar">
+            <button class="snippet-btn active" id="snip-dasar" onclick="loadEditorTemplate('dasar')">
+              <span class="snip-icon">📄</span> Template Dasar
+            </button>
+            <button class="snippet-btn" id="snip-teks" onclick="loadEditorTemplate('teks')">
+              <span class="snip-icon">📝</span> Judul &amp; Paragraf
+            </button>
+            <button class="snippet-btn" id="snip-media" onclick="loadEditorTemplate('media')">
+              <span class="snip-icon">🖼️</span> Gambar &amp; Link
+            </button>
+            <button class="snippet-btn" id="snip-tabel" onclick="loadEditorTemplate('tabel')">
+              <span class="snip-icon">📊</span> Tabel Siswa
+            </button>
+            <button class="snippet-btn" id="snip-form" onclick="loadEditorTemplate('form')">
+              <span class="snip-icon">📋</span> Form Masukan
+            </button>
+            <button class="snippet-btn" id="snip-deden" onclick="loadEditorTemplate('deden')">
+              <span class="snip-icon">🏫</span> Biodata MTsN 5
+            </button>
+            <button class="snippet-btn" id="snip-kosong" onclick="loadEditorTemplate('kosong')">
+              <span class="snip-icon">🧹</span> Lembar Kosong
+            </button>
+          </div>
+        </div>
+
+        <!-- Bilah Aksi Utama -->
+        <div class="editor-action-strip">
+          <div class="editor-action-left">
+            <button class="btn-editor-primary" id="btnRunEditor" onclick="runHtmlEditorCode()">
+              <span class="btn-icon">▶</span>
+              <span class="btn-text">Jalankan Kode</span>
+            </button>
+            <button class="btn-editor-secondary" id="btnResetEditor" onclick="resetEditorCode()">
+              <span class="btn-icon">🔄</span>
+              <span class="btn-text">Reset Kode</span>
+            </button>
+            <button class="btn-editor-secondary" id="btnClearEditor" onclick="clearEditorCode()">
+              <span class="btn-icon">🧹</span>
+              <span class="btn-text">Bersihkan</span>
+            </button>
+          </div>
+          <div class="editor-action-right">
+            <button class="btn-editor-outline" id="btnCopyEditor" onclick="copyEditorCode()">
+              <span class="btn-icon">📋</span>
+              <span class="btn-text">Salin Kode</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Workspace 2-Kolom (Split Screen) -->
+        <div class="editor-split-workspace">
+          
+          <!-- Kolom Kiri: Panel Editor Kode -->
+          <div class="editor-panel-column editor-code-column">
+            <div class="editor-window-header">
+              <div class="editor-file-tab">
+                <span class="file-icon">🌐</span>
+                <span class="file-name">index.html</span>
+                <span class="file-indicator active-dot" title="Editor Aktif"></span>
+              </div>
+              <div class="editor-meta-stats" id="editorCodeStats">
+                Baris: 1 | Karakter: 0
+              </div>
+            </div>
+
+            <div class="editor-textarea-wrapper">
+              <textarea 
+                id="htmlCodeInput" 
+                class="editor-textarea" 
+                spellcheck="false" 
+                autocomplete="off" 
+                autocapitalize="off" 
+                placeholder="<!-- Ketik kode HTML di sini... -->"
+              ></textarea>
+            </div>
+
+            <!-- HTML Helper / Feedback Alert Cerdas -->
+            <div class="editor-helper-box helper-info" id="htmlHelperBox">
+              <div class="helper-status-row">
+                <span class="helper-icon" id="helperIcon">💡</span>
+                <div class="helper-content">
+                  <strong id="helperTitle">Tips Guru Informatika:</strong>
+                  <span id="helperMsg">Tekan tombol <strong>"▶ Jalankan Kode"</strong> untuk melihat tampilan halaman webmu di layar peramban sebelah kanan!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Panel Layar Peramban (Live Preview) -->
+          <div class="editor-panel-column editor-preview-column">
+            <div class="browser-mockup-header">
+              <div class="browser-window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <span class="browser-lock">🔒</span>
+                <span class="browser-url">https://sekolahku.sch.id/latihan-siswa.html</span>
+              </div>
+              <div class="browser-live-badge">
+                <span class="live-dot"></span> LIVE
+              </div>
+            </div>
+
+            <div class="browser-viewport-container">
+              <iframe 
+                id="htmlEditorPreview" 
+                class="editor-preview-iframe" 
+                title="Pratinjau Hasil Kode HTML Siswa"
+                sandbox="allow-same-origin allow-scripts"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bagian 3 Tantangan Koding Mandiri -->
+        <div class="editor-challenges-wrapper">
+          <div class="challenges-section-header">
+            <div class="challenges-badge">🎯 Misi Siswa</div>
+            <h2 class="challenges-title">Uji Kemampuanmu dengan 3 Tantangan Koding Ini!</h2>
+            <p class="challenges-desc">Klik tombol tantangan di bawah untuk langsung memasukkan misi dan kerangka kode ke dalam editor.</p>
+          </div>
+
+          <div class="challenges-grid">
+            
+            <!-- Tantangan 1 -->
+            <div class="challenge-card">
+              <div class="challenge-header">
+                <span class="challenge-num">Tantangan 1</span>
+                <span class="challenge-difficulty diff-easy">⭐ Pemula</span>
+              </div>
+              <h3 class="challenge-name">Kartu Biodata Diri</h3>
+              <p class="challenge-instruction">
+                Buat halaman profil pengenal diri yang memuat namamu dalam judul <code>&lt;h1&gt;</code>, kelas dan asal sekolah dalam <code>&lt;p&gt;</code>, serta satu kalimat moto hidup favorit.
+              </p>
+              <div class="challenge-targets">
+                <span class="target-tag">&lt;h1&gt;</span>
+                <span class="target-tag">&lt;p&gt;</span>
+                <span class="target-tag">&lt;strong&gt;</span>
+              </div>
+              <button class="btn-challenge-load" onclick="loadEditorChallenge(1)">
+                <span>🚀 Coba Tantangan 1</span>
+              </button>
+            </div>
+
+            <!-- Tantangan 2 -->
+            <div class="challenge-card">
+              <div class="challenge-header">
+                <span class="challenge-num">Tantangan 2</span>
+                <span class="challenge-difficulty diff-medium">⭐⭐ Menengah</span>
+              </div>
+              <h3 class="challenge-name">Daftar Hobi &amp; Makanan Favorit</h3>
+              <p class="challenge-instruction">
+                Buat 2 variasi daftar: 3 hobi favorit menggunakan bullet titik (<code>&lt;ul&gt;</code>) dan 3 makanan favorit menggunakan nomor urut (<code>&lt;ol&gt;</code>).
+              </p>
+              <div class="challenge-targets">
+                <span class="target-tag">&lt;h2&gt;</span>
+                <span class="target-tag">&lt;ul&gt;</span>
+                <span class="target-tag">&lt;ol&gt;</span>
+                <span class="target-tag">&lt;li&gt;</span>
+              </div>
+              <button class="btn-challenge-load" onclick="loadEditorChallenge(2)">
+                <span>🚀 Coba Tantangan 2</span>
+              </button>
+            </div>
+
+            <!-- Tantangan 3 -->
+            <div class="challenge-card">
+              <div class="challenge-header">
+                <span class="challenge-num">Tantangan 3</span>
+                <span class="challenge-difficulty diff-hard">⭐⭐⭐ Mahir</span>
+              </div>
+              <h3 class="challenge-name">Tabel Jadwal Pelajaran</h3>
+              <p class="challenge-instruction">
+                Buat tabel jadwal pelajaran sekolah lengkap dengan baris judul kolom <code>&lt;th&gt;</code> (Hari, Jam, Mata Pelajaran, Ruangan) dan isi data <code>&lt;td&gt;</code>.
+              </p>
+              <div class="challenge-targets">
+                <span class="target-tag">&lt;table&gt;</span>
+                <span class="target-tag">&lt;tr&gt;</span>
+                <span class="target-tag">&lt;th&gt;</span>
+                <span class="target-tag">&lt;td&gt;</span>
+              </div>
+              <button class="btn-challenge-load" onclick="loadEditorChallenge(3)">
+                <span>🚀 Coba Tantangan 3</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ======================================================================
+         SECTION 4: MENU AKTIVITAS (INTERAKTIF UTAMA)
+         ====================================================================== -->
+    <section id="aktivitas" class="page-section">
+      <div class="container">
+        
+        <div class="section-heading-box">
+          <div class="section-pill">🎮 Ruang Aktivitas</div>
+          <h2 class="section-title">Aktivitas Belajar Interaktif</h2>
+          <p class="section-subtitle">
+            Asah pemahamanmu lewat kuis tebak tag, menjodohkan fungsi, simulator web, latihan logika JavaScript, dan mini project!
+          </p>
+        </div>
+
+        <!-- Tab Navigasi Aktivitas -->
+        <div class="activity-tabs-bar">
+          <button class="act-tab-btn active" onclick="switchActivityTab('act-1')">
+            <span class="act-tab-icon">🎯</span>
+            <span>Aktivitas 1: Tebak Tag</span>
+          </button>
+          <button class="act-tab-btn" onclick="switchActivityTab('act-2')">
+            <span class="act-tab-icon">🧩</span>
+            <span>Aktivitas 2: Cocokkan Fungsi</span>
+          </button>
+          <button class="act-tab-btn" onclick="switchActivityTab('act-3')">
+            <span class="act-tab-icon">🎨</span>
+            <span>Aktivitas 3: Pilih CSS</span>
+          </button>
+          <button class="act-tab-btn" onclick="switchActivityTab('act-4')">
+            <span class="act-tab-icon">💻</span>
+            <span>Aktivitas 4: Simulasi Web</span>
+          </button>
+          <button class="act-tab-btn js-act-pill" onclick="switchActivityTab('act-js')">
+            <span class="act-tab-icon">⚡</span>
+            <span>Aktivitas 5: Logika JS</span>
+          </button>
+          <button class="act-tab-btn" onclick="switchActivityTab('act-5')">
+            <span class="act-tab-icon">🚀</span>
+            <span>Mini Project Profil</span>
+          </button>
+        </div>
+
+        <!-- AKTIVITAS 1: TEBAK TAG HTML -->
+        <div id="act-1" class="activity-panel active">
+          <div class="activity-card">
+            
+            <div class="activity-header">
+              <div class="act-title-box">
+                <span class="act-badge html-badge">Aktivitas 1</span>
+                <h3>Tebak Tag HTML yang Tepat</h3>
+              </div>
+              <div class="act-score-box">
+                <span>Skor Kamu:</span>
+                <strong id="act1ScoreDisplay">0</strong> / 80
+              </div>
+            </div>
+
+            <p class="act-instruction">
+              Baca situasi di bawah ini, lalu pilih tag HTML yang paling tepat untuk menyelesaikannya!
+            </p>
+
+            <div class="question-container" id="act1Container">
+              <div class="question-counter" id="act1Counter">Soal 1 dari 8</div>
+              <div class="question-prompt" id="act1Prompt">
+                "Tag apa yang digunakan untuk membuat <strong>judul utama</strong>?"
+              </div>
+
+              <!-- Pilihan Jawaban A, B, C, D -->
+              <div class="options-grid" id="act1OptionsGrid">
+                <!-- Rendered by JS -->
+              </div>
+
+              <!-- Kotak Feedback Jawaban -->
+              <div class="feedback-box" id="act1Feedback" style="display: none;">
+                <div class="feedback-icon" id="act1FeedbackIcon">✅</div>
+                <div class="feedback-body">
+                  <h4 id="act1FeedbackTitle">Jawaban Benar!</h4>
+                  <p id="act1FeedbackText">Tag &lt;h1&gt; digunakan untuk judul utama paling besar.</p>
+                </div>
+              </div>
+
+              <div class="act-action-bar">
+                <button class="btn btn-secondary" id="act1NextBtn" onclick="nextAct1Question()" style="display: none;">
+                  Lanjut ke Soal Berikutnya &rarr;
+                </button>
+                <button class="btn btn-outline" id="act1RestartBtn" onclick="restartAct1()" style="display: none;">
+                  🔄 Ulangi Aktivitas 1
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- AKTIVITAS 2: COCOKKAN HTML DAN FUNGSINYA -->
+        <div id="act-2" class="activity-panel">
+          <div class="activity-card">
+            
+            <div class="activity-header">
+              <div class="act-title-box">
+                <span class="act-badge html-badge">Aktivitas 2</span>
+                <h3>Cocokkan HTML dan Fungsinya</h3>
+              </div>
+              <div class="act-score-box">
+                <span>Pasangan Benar:</span>
+                <strong id="act2MatchedCount">0</strong> / 6
+              </div>
+            </div>
+
+            <p class="act-instruction">
+              <strong>Cara bermain:</strong> Klik satu <em>Tag HTML</em> di sisi kiri, kemudian klik <em>Fungsi</em> yang cocok di sisi kanan. Jika cocok, kedua kartu berubah hijau!
+            </p>
+
+            <div class="matching-game-wrapper">
+              <div class="matching-column" id="act2LeftColumn">
+                <h4 class="match-col-header">🏷️ Tag HTML</h4>
+                <!-- Rendered by JS -->
+              </div>
+
+              <div class="matching-center-indicator">
+                <span class="indicator-arrow">↔️</span>
+              </div>
+
+              <div class="matching-column" id="act2RightColumn">
+                <h4 class="match-col-header">🎯 Fungsi / Kegunaan</h4>
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <div class="match-completed-box" id="act2CompleteBox" style="display: none;">
+              <div class="complete-trophy">🎉</div>
+              <h3>Luar Biasa! Semua Pasangan Cocok!</h3>
+              <p>Kamu sudah sangat memahami peran masing-masing tag HTML dasar.</p>
+              <button class="btn btn-primary" onclick="resetAct2Game()">🔄 Mainkan Lagi</button>
+            </div>
+
+            <div class="act-action-bar" style="margin-top: 15px;">
+              <button class="btn btn-outline" onclick="resetAct2Game()">🔄 Acak & Reset Posisi</button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- AKTIVITAS 3: PILIH CSS YANG TEPAT -->
+        <div id="act-3" class="activity-panel">
+          <div class="activity-card">
+            
+            <div class="activity-header">
+              <div class="act-title-box">
+                <span class="act-badge css-badge">Aktivitas 3</span>
+                <h3>Pilih CSS yang Tepat</h3>
+              </div>
+              <div class="act-score-box">
+                <span>Skor Kamu:</span>
+                <strong id="act3ScoreDisplay">0</strong> / 80
+              </div>
+            </div>
+
+            <p class="act-instruction">
+              Pilih potongan kode CSS yang sesuai untuk situasi pengaturan tampilan berikut:
+            </p>
+
+            <div class="question-container" id="act3Container">
+              <div class="question-counter" id="act3Counter">Soal 1 dari 8</div>
+              <div class="question-prompt" id="act3Prompt">
+                "Kamu ingin membuat teks menjadi berwarna merah."
+              </div>
+
+              <!-- Pilihan Jawaban CSS -->
+              <div class="options-grid css-options-grid" id="act3OptionsGrid">
+                <!-- Rendered by JS -->
+              </div>
+
+              <div class="feedback-box" id="act3Feedback" style="display: none;">
+                <div class="feedback-icon" id="act3FeedbackIcon">✅</div>
+                <div class="feedback-body">
+                  <h4 id="act3FeedbackTitle">Tepat Sekali!</h4>
+                  <p id="act3FeedbackText">color: red; digunakan untuk mengubah warna teks.</p>
+                </div>
+              </div>
+
+              <div class="act-action-bar">
+                <button class="btn btn-secondary" id="act3NextBtn" onclick="nextAct3Question()" style="display: none;">
+                  Lanjut ke Soal Berikutnya &rarr;
+                </button>
+                <button class="btn btn-outline" id="act3RestartBtn" onclick="restartAct3()" style="display: none;">
+                  🔄 Ulangi Aktivitas 3
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- AKTIVITAS 4: SIMULASI WEB SEDERHANA -->
+        <div id="act-4" class="activity-panel">
+          <div class="activity-card">
+            
+            <div class="activity-header">
+              <div class="act-title-box">
+                <span class="act-badge code-badge">Aktivitas 4</span>
+                <h3>Simulasi Halaman Web Sederhana</h3>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="resetSimulator()">🔄 Reset Simulasi</button>
+            </div>
+
+            <p class="act-instruction">
+              Klik tombol-tombol di bawah untuk melihat bagaimana penambahan kode HTML dan CSS langsung mengubah tampilan web secara nyata!
+            </p>
+
+            <!-- Simulator Control Toolbar -->
+            <div class="sim-toolbar">
+              
+              <!-- Grup Kontrol HTML -->
+              <div class="sim-control-group">
+                <span class="group-label html-label">⚙️ Tombol HTML:</span>
+                <div class="btn-group-chips">
+                  <button class="sim-chip-btn active" id="btnSimTitle" onclick="toggleSimHtml('title')">
+                    [Judul]
+                  </button>
+                  <button class="sim-chip-btn active" id="btnSimPara" onclick="toggleSimHtml('para')">
+                    [Paragraf]
+                  </button>
+                  <button class="sim-chip-btn" id="btnSimImg" onclick="toggleSimHtml('img')">
+                    [Gambar]
+                  </button>
+                  <button class="sim-chip-btn" id="btnSimList" onclick="toggleSimHtml('list')">
+                    [List]
+                  </button>
+                </div>
+              </div>
+
+              <!-- Grup Kontrol CSS -->
+              <div class="sim-control-group">
+                <span class="group-label css-label">🎨 Tombol CSS:</span>
+                <div class="btn-group-chips">
+                  <button class="sim-chip-btn active" id="btnSimColor" onclick="toggleSimCss('color')">
+                    [Warna]
+                  </button>
+                  <button class="sim-chip-btn active" id="btnSimSize" onclick="toggleSimCss('size')">
+                    [Ukuran]
+                  </button>
+                  <button class="sim-chip-btn" id="btnSimCenter" onclick="toggleSimCss('center')">
+                    [Tengah]
+                  </button>
+                  <button class="sim-chip-btn" id="btnSimBg" onclick="toggleSimCss('bg')">
+                    [Background]
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tiga Panel Simulasi: Panel HTML, Panel CSS, Panel Hasil -->
+            <div class="simulator-three-columns">
+              
+              <!-- Panel 1: HTML Code -->
+              <div class="sim-col">
+                <div class="sim-col-header html-col-header">
+                  <span>📄 PANEL HTML</span>
+                  <span class="tag-status">Struktur</span>
+                </div>
+                <div class="sim-editor-area">
+                  <pre><code id="simHtmlCodeText"></code></pre>
+                </div>
+              </div>
+
+              <!-- Panel 2: CSS Code -->
+              <div class="sim-col">
+                <div class="sim-col-header css-col-header">
+                  <span>🎨 PANEL CSS</span>
+                  <span class="tag-status">Tampilan</span>
+                </div>
+                <div class="sim-editor-area">
+                  <pre><code id="simCssCodeText"></code></pre>
+                </div>
+              </div>
+
+              <!-- Panel 3: Live Preview Hasil -->
+              <div class="sim-col preview-col">
+                <div class="sim-col-header preview-col-header">
+                  <span>🌐 PANEL HASIL</span>
+                  <span class="tag-status live-status">Preview Web</span>
+                </div>
+                <div class="sim-browser-viewport" id="simBrowserViewport">
+                  <div class="sim-viewport-inner" id="simViewportInner">
+                    <!-- Dynamic rendering by JS -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="sim-concept-note">
+              🎯 <strong>Hubungan Penting:</strong>
+              <code>Kode</code> &rarr; <code>Browser</code> &rarr; <code>Tampilan</code>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             AKTIVITAS 5: LOGIKA JAVASCRIPT (PROMPT & IF SEDERHANA) (BARU!)
+             ================================================================== -->
+        <div id="act-js" class="activity-panel">
+          <div class="activity-card js-activity-card">
+            
+            <div class="activity-header">
+              <div class="act-title-box">
+                <span class="act-badge js-badge">Aktivitas 5</span>
+                <h3>Simulasi Interaktif Logika JavaScript</h3>
+              </div>
+              <span class="js-tag-pill">prompt() + if</span>
+            </div>
+
+            <p class="act-instruction">
+              Mari kita coba alur logika nyata: minta masukan dari pengguna dengan <code>prompt()</code>, simpan ke variabel <code>let</code>, lalu gunakan percabangan <code>if</code> untuk memeriksa kondisi!
+            </p>
+
+            <div class="js-activity-playground">
+              <div class="js-play-left">
+                <h4>Kode Program yang Akan Dijalankan:</h4>
+                <div class="window-bar">
+                  <div class="dot red"></div>
+                  <div class="dot yellow"></div>
+                  <div class="dot green"></div>
+                  <span class="window-title">cek_kelulusan.js</span>
+                </div>
+                <pre class="code-block mini-font"><code><span class="token-js-kw">let</span> nama = <span class="token-js-func">prompt</span>(<span class="token-val">"Masukkan nama siswa:"</span>);
+<span class="token-js-kw">let</span> nilai = <span class="token-js-func">prompt</span>(<span class="token-val">"Masukkan nilai ujian (0-100):"</span>);
+
+console.<span class="token-js-func">log</span>(<span class="token-val">"Memeriksa nilai "</span> + nama + <span class="token-val">"..."</span>);
+
+<span class="token-js-kw">if</span> (nilai &gt;= <span class="token-val">75</span>) {
+    console.<span class="token-js-func">log</span>(<span class="token-val">"SELAMAT "</span> + nama + <span class="token-val">", KAMU LULUS! 🎉"</span>);
+} <span class="token-js-kw">else</span> {
+    console.<span class="token-js-func">log</span>(<span class="token-val">"Semangat "</span> + nama + <span class="token-val">", kamu perlu belajar lagi! 📚"</span>);
+}</code></pre>
+
+                <div style="margin-top: 15px;">
+                  <button class="btn btn-primary" onclick="runInteractiveJsActivity()">
+                    ⚡ Jalankan Simulasi prompt() &amp; if Sekarang!
+                  </button>
+                </div>
+              </div>
+
+              <div class="js-play-right">
+                <h4>Hasil Eksekusi Layar Konsol:</h4>
+                <div class="virtual-console-screen" style="min-height: 220px;">
+                  <div class="console-screen-head">
+                    <span class="screen-dot red"></span>
+                    <span class="screen-dot yellow"></span>
+                    <span class="screen-dot green"></span>
+                    <span class="screen-title">Interactive Console Output</span>
+                  </div>
+                  <div class="console-screen-lines" id="actJsConsoleLines">
+                    <div class="console-line system-line">[Sistem] Siap menerima eksekusi...</div>
+                    <div class="console-line log-line">&gt; Klik tombol di sebelah kiri untuk mencoba prompt() dan if!</div>
+                  </div>
+                </div>
+                <div class="element-note" style="margin-top: 10px;">
+                  💡 Perhatikan bagaimana <code>if</code> memilih mencetak pesan Lulus atau Belajar Lagi berdasarkan nilai yang kamu masukkan!
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- MINI PROJECT: BUAT HALAMAN PROFIL SAYA -->
+        <div id="act-5" class="activity-panel">
+          <div class="activity-card mini-project-card">
+            
+            <div class="project-header">
+              <div class="project-badge">🚀 MINI PROJECT</div>
+              <h3 class="project-title">Mini Project — Buat Halaman Profil Saya</h3>
+              <p class="project-desc">
+                Arahkan dirimu untuk membuat halaman web sederhana tentang biodata dan hobimu! Centang setiap langkah pada checklist di bawah saat kamu berhasil mempraktikkannya:
+              </p>
+            </div>
+
+            <!-- Progress Checklist -->
+            <div class="checklist-progress-wrap">
+              <div class="progress-labels">
+                <span>Checklist Proyek Terselesaikan:</span>
+                <strong id="projectProgressText">0 / 10 Selesai (0%)</strong>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="projectProgressBar" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div class="project-layout-grid">
+              
+              <!-- Checklist 10 Poin (Sesuai Spesifikasi) -->
+              <div class="checklist-box">
+                <h4 class="checklist-title">📋 Checklist Pembuatan Halaman:</h4>
+                <div class="checklist-items" id="projectChecklistList">
+                  <!-- Rendered by JS -->
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="resetProjectChecklist()" style="margin-top: 10px;">
+                  🔄 Reset Semua Checklist
+                </button>
+              </div>
+
+              <!-- Contoh Kode & Preview Profil Andi -->
+              <div class="project-sample-box">
+                <h4 class="sample-title">💡 Contoh Kode Jadi Profil Siswa:</h4>
+                
+                <div class="sample-tabs">
+                  <button class="sample-tab-btn active" id="btnSampleHtml" onclick="switchSampleTab('html')">HTML</button>
+                  <button class="sample-tab-btn" id="btnSampleCss" onclick="switchSampleTab('css')">CSS</button>
+                  <button class="sample-tab-btn" id="btnSamplePreview" onclick="switchSampleTab('preview')">Hasil Preview 👁️</button>
+                </div>
+
+                <div class="sample-view-body">
+                  <!-- Tab HTML -->
+                  <div id="sampleHtmlView" class="sample-subview active">
+                    <pre class="code-block mini-font"><code><span class="token-tag">&lt;h1&gt;</span>Profil Saya<span class="token-tag">&lt;/h1&gt;</span>
+
+<span class="token-tag">&lt;p&gt;</span>Nama saya Andi. Saya siswa kelas 8.<span class="token-tag">&lt;/p&gt;</span>
+
+<span class="token-tag">&lt;h2&gt;</span>Hobi Saya<span class="token-tag">&lt;/h2&gt;</span>
+
+<span class="token-tag">&lt;ul&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Membaca<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Bermain Bola<span class="token-tag">&lt;/li&gt;</span>
+    <span class="token-tag">&lt;li&gt;</span>Mendengarkan Musik<span class="token-tag">&lt;/li&gt;</span>
+<span class="token-tag">&lt;/ul&gt;</span></code></pre>
+                  </div>
+
+                  <!-- Tab CSS -->
+                  <div id="sampleCssView" class="sample-subview">
+                    <pre class="code-block mini-font"><code><span class="token-selector">h1</span> {
+    <span class="token-prop">color</span>: <span class="token-val">green</span>;
+    <span class="token-prop">text-align</span>: <span class="token-val">center</span>;
+}
+
+<span class="token-selector">p</span> {
+    <span class="token-prop">font-size</span>: <span class="token-val">18px</span>;
+}
+
+<span class="token-selector">ul</span> {
+    <span class="token-prop">background-color</span>: <span class="token-val">lightblue</span>;
+    <span class="token-prop">padding</span>: <span class="token-val">20px</span>;
+}</code></pre>
+                  </div>
+
+                  <!-- Tab Preview Profil Andi -->
+                  <div id="samplePreviewView" class="sample-subview">
+                    <div class="andi-profile-card">
+                      <h1 class="andi-h1">Profil Saya</h1>
+                      <p class="andi-p">Nama saya Andi. Saya siswa kelas 8.</p>
+                      <h2 class="andi-h2">Hobi Saya</h2>
+                      <ul class="andi-ul">
+                        <li>Membaca</li>
+                        <li>Bermain Bola</li>
+                        <li>Mendengarkan Musik</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5: MENU KUIS (10 SOAL INTERAKTIF)
+         ====================================================================== -->
+    <section id="kuis" class="page-section">
+      <div class="container">
+        
+        <div class="section-heading-box">
+          <div class="section-pill">📝 Uji Pemahaman</div>
+          <h2 class="section-title">Kuis Interaktif Web (HTML, CSS & JS)</h2>
+          <p class="section-subtitle">
+            Uji pemahaman materi HTML, CSS, dan JavaScript Dasar kamu. Soal ditampilkan satu per satu dengan feedback otomatis.
+          </p>
+        </div>
+
+        <div class="quiz-box-card">
+          
+          <!-- Layar Bermain Kuis -->
+          <div id="quizPlayScreen">
+            
+            <div class="quiz-top-info">
+              <div class="quiz-step-info">
+                <span class="quiz-badge">SOAL</span>
+                <span class="quiz-step-number" id="quizStepText">1 / 10</span>
+              </div>
+              <div class="quiz-track-bar">
+                <div class="quiz-track-fill" id="quizProgressBar" style="width: 10%;"></div>
+              </div>
+              <div class="quiz-score-badge">
+                Skor: <strong id="quizCurrentScore">0</strong>
+              </div>
+            </div>
+
+            <!-- Pertanyaan Kuis -->
+            <div class="quiz-question-box">
+              <h3 class="quiz-question-text" id="quizQuestionText">
+                "Bahasa yang digunakan untuk membuat struktur halaman web adalah..."
+              </h3>
+            </div>
+
+            <!-- Opsi Pilihan A, B, C, D -->
+            <div class="quiz-options-list" id="quizOptionsList">
+              <!-- Rendered by JS -->
+            </div>
+
+            <!-- Feedback Otomatis -->
+            <div class="quiz-feedback-box" id="quizFeedbackBox" style="display: none;">
+              <div class="quiz-feedback-header">
+                <span class="feedback-icon-large" id="quizFeedbackIcon">✅</span>
+                <h4 id="quizFeedbackTitle">Jawaban Benar!</h4>
+              </div>
+              <p class="quiz-feedback-explanation" id="quizFeedbackExplanation">
+                HTML digunakan untuk membuat struktur atau kerangka isi sebuah halaman web.
+              </p>
+              <button class="btn btn-primary" id="quizNextBtn" onclick="nextQuizQuestion()">
+                Lanjut ke Soal Berikutnya &rarr;
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Layar Hasil Akhir Kuis -->
+          <div id="quizResultScreen" style="display: none;">
+            <div class="result-celebration">
+              <div class="result-badge-icon" id="resultBadgeIcon">🏆</div>
+              <h2 class="result-congrats-title" id="resultCongratsTitle">Kuis Selesai!</h2>
+              <div class="result-score-circle">
+                <span class="score-number" id="resultScoreNum">100</span>
+                <span class="score-denom">/ 100</span>
+              </div>
+              <div class="result-category-chip" id="resultCategoryChip">
+                Kategori: Sangat Baik 🏆
+              </div>
+              <p class="result-summary-message" id="resultSummaryMessage">
+                Luar biasa! Pemahamanmu mengenai materi HTML, CSS, dan JavaScript dasar sudah sangat baik.
+              </p>
+              <div class="result-buttons-row">
+                <button class="btn btn-primary" onclick="restartQuiz()">
+                  🔄 Ulangi Kuis
+                </button>
+                <button class="btn btn-secondary" onclick="navigateTo('rangkuman')">
+                  💡 Lihat Rangkuman Materi
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6: MENU RANGKUMAN
+         ====================================================================== -->
+    <section id="rangkuman" class="page-section">
+      <div class="container">
+        
+        <div class="section-heading-box">
+          <div class="section-pill">💡 Intisari Materi</div>
+          <h2 class="section-title">Rangkuman HTML, CSS dan JavaScript Dasar</h2>
+          <p class="section-subtitle">
+            Ringkasan visual dan tabel referensi cepat untuk mengingat kembali konsep-konsep kunci yang telah dipelajari.
+          </p>
+        </div>
+
+        <!-- Diagram Alur Pemahaman Web (Lengkap dengan JavaScript) -->
+        <div class="visual-flow-card">
+          <h4 class="flow-title">🔄 Alur Pembuatan Halaman Web Modern:</h4>
+          <div class="flow-steps-row">
+            <div class="flow-step-box step-html">
+              <span class="step-num">1</span>
+              <span class="step-icon">💻</span>
+              <h5>HTML</h5>
+              <p>Menyusun struktur &amp; kerangka dokumen web</p>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step-box step-css">
+              <span class="step-num">2</span>
+              <span class="step-icon">🎨</span>
+              <h5>CSS</h5>
+              <p>Memperindah tampilan, warna, &amp; kerapian tata letak</p>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step-box step-js">
+              <span class="step-num">3</span>
+              <span class="step-icon">⚡</span>
+              <h5>JAVASCRIPT</h5>
+              <p>Memberikan aksi, logika interaktif, &amp; keputusan</p>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-step-box step-result">
+              <span class="step-num">4</span>
+              <span class="step-icon">✨</span>
+              <h5>WEB INTERAKTIF!</h5>
+              <p>Halaman web modern yang hidup dan siap digunakan!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poin Rangkuman Penting (Lengkap & Terstruktur) -->
+        <div class="summary-points-card">
+          <h4 class="summary-card-title">📌 Intisari Materi Penting yang Wajib Diingat:</h4>
+          
+          <!-- Kelompok 1: HTML Dasar -->
+          <div class="summary-category-group">
+            <div class="summary-group-header">
+              <span class="summary-group-badge html-badge-color">🌐 1. HTML (Kerangka &amp; Struktur Web)</span>
+            </div>
+            <div class="summary-bullets-grid">
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>HTML</strong> digunakan untuk membuat struktur dan kerangka isi halaman web.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Struktur Dasar</strong> terdiri dari <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> (judul tab), dan <code>&lt;body&gt;</code> (isi yang terlihat).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;h1&gt;</code> hingga <code>&lt;h3&gt;</code> untuk membuat judul bertingkat dari yang paling besar ke subjudul.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;p&gt;</code> digunakan untuk membuat paragraf teks tulisan.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;a href="..."&gt;</code> digunakan untuk membuat tautan link antarpageweb.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;img src="..." alt="..."&gt;</code> digunakan untuk menampilkan gambar ke halaman web.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;ul&gt;</code> untuk daftar dengan bullet titik, sedangkan <code>&lt;ol&gt;</code> untuk daftar dengan nomor urut.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;table&gt;</code> untuk membuat tabel data dengan baris <code>&lt;tr&gt;</code>, judul kolom <code>&lt;th&gt;</code>, dan sel data <code>&lt;td&gt;</code>.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>&lt;form&gt;</code> sebagai wadah formulir input data dengan <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, dan tombol <code>&lt;button&gt;</code>.</span></div>
+            </div>
+          </div>
+
+          <!-- Kelompok 2: CSS Dasar & Properti Penting -->
+          <div class="summary-category-group" style="margin-top: 25px;">
+            <div class="summary-group-header">
+              <span class="summary-group-badge css-badge-color">🎨 2. CSS (Tata Rias, Warna &amp; Desain)</span>
+            </div>
+            <div class="summary-bullets-grid">
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>CSS</strong> (<em>Cascading Style Sheets</em>) digunakan untuk mengatur keindahan, warna, font, dan tata letak halaman web.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Anatomi CSS:</strong> Terdiri dari <code>Selector { Property: Value; }</code> yang dipisahkan titik dua dan diakhiri titik koma.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>3 Cara Penggunaan CSS:</strong> <em>External</em> (berkas terpisah via <code>&lt;link&gt;</code>), <em>Internal</em> (tag <code>&lt;style&gt;</code> di head), dan <em>Inline</em> (atribut <code>style="..."</code>).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Prioritas Cascading:</strong> <em>Inline CSS &gt; Internal / External CSS</em> (siapa paling dekat menempel di elemen, perintahnya yang menang).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Selector:</strong> Tag (<code>h1</code>), Class (<code>.nama-kelas</code> dengan tanda titik), ID (<code>#nama-id</code> dengan tanda pagar), dan efek kursor (<code>:hover</code>).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>color</code> untuk warna teks, dan <code>background-color</code> untuk warna latar belakang kotak atau halaman.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>font-family</code> untuk menentukan jenis font modern, dan <code>font-size</code> untuk mengatur ukuran teks.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>text-decoration: none;</code> kunci untuk menghilangkan garis bawah biru bawaan link agar bisa disulap jadi tombol modern.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>CSS Box Model:</strong> <code>margin</code> (jarak bagian luar) vs <code>padding</code> (jarak bagian dalam) vs <code>border</code> (garis tepi pembatas).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>border-radius</code> membuat sudut kotak menjadi melengkung/membulat (efek rounded modern).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>max-width: 650px; margin: 0 auto;</code> trik jitu membuat kartu konten berada persis di tengah layar secara horizontal.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>border-collapse: collapse;</code> menyatukan garis ganda tabel kuno menjadi 1 garis rapi dan modern.</span></div>
+            </div>
+          </div>
+
+          <!-- Kelompok 3: JavaScript Dasar & Interaktivitas -->
+          <div class="summary-category-group" style="margin-top: 25px;">
+            <div class="summary-group-header">
+              <span class="summary-group-badge js-badge-color">⚡ 3. JavaScript (Otak, Logika &amp; Aksi Interaktif)</span>
+            </div>
+            <div class="summary-bullets-grid">
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>JavaScript</strong> adalah bahasa pemrograman yang memberi aksi, logika, dan interaksi agar web menjadi hidup.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>3 Cara Pasang JS:</strong> External (<code>&lt;script src="..."&gt;</code> sebelum <code>&lt;/body&gt;</code>), Internal (<code>&lt;script&gt;</code>), dan Inline (event <code>onclick</code>).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>let</code> untuk membuat variabel yang datanya bisa diubah, sedangkan <code>const</code> untuk data yang bersifat tetap/konstan.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>console.log()</code> untuk mencetak pesan/catatan programmer di balik layar peramban.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>alert()</code> memunculkan pesan pengumuman pop-up, sedangkan <code>prompt()</code> meminta masukan ketikan nama/data dari pengguna.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><code>confirm()</code> memunculkan dialog persetujuan dengan pilihan tombol OK (true) atau Batal (false).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Fungsi (function):</strong> Kumpulan perintah bernama yang dijalankan saat dipanggil, misal dipicu oleh event <code>onclick</code> pada tombol.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Manipulasi DOM:</strong> <code>document.getElementById('id')</code> untuk memilih elemen, <code>.innerText</code> untuk ganti teks, dan <code>.classList.toggle()</code> untuk fitur Dark Mode!</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>Percabangan if...else:</strong> Mengambil keputusan logis (misal memeriksa apakah form sudah diisi lengkap atau belum).</span></div>
+            </div>
+          </div>
+
+          <!-- Kelompok 4: Studi Kasus Trio Web (Biodata MTsN 5 Sumedang) -->
+          <div class="summary-category-group" style="margin-top: 25px;">
+            <div class="summary-group-header">
+              <span class="summary-group-badge deden-badge-color">🏫 4. Studi Kasus Trio Web (Biodata MTsN 5 Sumedang)</span>
+            </div>
+            <div class="summary-bullets-grid">
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>HTML:</strong> Membangun struktur biodata Deden Juliandi (judul, identitas kelas 9, foto kamad, link ChatGPT, hobi, cita-cita, tabel riwayat, dan form).</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>CSS:</strong> Mengubah tampilan kaku menjadi kartu putih berbayang halus di tengah, tombol ChatGPT hijau, sudut foto membulat, dan tabel modern.</span></div>
+              <div class="bullet-item"><span class="check-icon">✓</span><span><strong>JavaScript:</strong> Menyalakan aksi nyata: tombol sapa pengunjung dengan <code>prompt()</code>, saklar Mode Gelap dengan <code>classList.toggle()</code>, tambah hobi baru secara dinamis, dan validasi form dengan <code>if...else</code>!</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tabel Ringkas Cheatsheet Referensi Cepat -->
+        <div class="cheat-sheet-card">
+          <h4 class="cheat-title">📋 Tabel Ringkas Cheatsheet (HTML, CSS &amp; JavaScript):</h4>
+          <div class="table-responsive">
+            <table class="summary-table">
+              <thead>
+                <tr>
+                  <th style="width: 15%;">Bidang</th>
+                  <th style="width: 30%;">Tag / Perintah / Properti</th>
+                  <th style="width: 55%;">Fungsi &amp; Penjelasan Singkat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- HTML -->
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;h1&gt;</code> s/d <code>&lt;h3&gt;</code></td><td>Membuat judul utama hingga subjudul bertingkat</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;p&gt;</code></td><td>Membuat paragraf teks bacaan</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;a href="..."&gt;</code></td><td>Membuat tautan / link menuju halaman web lain</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;img src="..."&gt;</code></td><td>Menyisipkan dan menampilkan gambar</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></td><td>Membuat daftar bullet titik / daftar nomor urut</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></td><td>Membuat tabel data dengan baris, judul kolom, dan sel data</td></tr>
+                <tr><td><span class="cheat-badge cheat-html">HTML</span></td><td><code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code></td><td>Membuat wadah formulir isian data dan tombol pengiriman</td></tr>
+                
+                <!-- CSS -->
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>&lt;link rel="stylesheet"&gt;</code></td><td>Menghubungkan berkas External CSS ke dokumen HTML</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>.kelas</code> &amp; <code>#id</code></td><td>Selector kelas (tanda titik) dan selector ID (tanda pagar)</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>:hover</code></td><td>Pseudo-class efek animasi saat kursor mouse menyentuh elemen</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>color</code> &amp; <code>background-color</code></td><td>Mengatur warna huruf dan warna latar belakang kotak/halaman</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>font-family</code> &amp; <code>font-size</code></td><td>Mengatur jenis huruf (font) dan ukuran besar huruf (px)</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>text-decoration: none;</code></td><td>Menghilangkan garis bawah pada tautan link</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>margin</code> &amp; <code>padding</code></td><td><code>margin</code> = jarak luar elemen &bull; <code>padding</code> = jarak dalam</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>border-radius</code></td><td>Membuat sudut kotak menjadi melengkung atau membulat</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>max-width</code> &amp; <code>margin: 0 auto;</code></td><td>Trik membuat kartu konten berpusat di tengah layar secara horizontal</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>border-collapse: collapse;</code></td><td>Menyatukan garis ganda tabel kuno menjadi 1 garis ramping rapi</td></tr>
+                <tr style="background: #f0f7ff;"><td><span class="cheat-badge cheat-css">CSS</span></td><td><code>input:focus</code></td><td>Memberikan efek border bersinar saat kotak input sedang diketik</td></tr>
+
+                <!-- JAVASCRIPT -->
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>&lt;script src="..."&gt;</code></td><td>Menghubungkan berkas JavaScript eksternal sebelum <code>&lt;/body&gt;</code></td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>let</code> &amp; <code>const</code></td><td>Membuat variabel untuk menyimpan data dinamis (let) atau tetap (const)</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>console.log()</code></td><td>Mencetak pesan atau catatan data ke konsol peramban</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>alert()</code></td><td>Menampilkan kotak dialog pengumuman pop-up kepada pengguna</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>prompt()</code></td><td>Menampilkan kotak dialog meminta ketikan masukan dari pengguna</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>confirm()</code></td><td>Menampilkan kotak dialog persetujuan dengan pilihan OK atau Batal</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>function nama() { ... }</code></td><td>Membungkus kumpulan perintah yang dapat dipanggil kapan saja</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>onclick="..."</code></td><td>Event listener untuk mendeteksi sentuhan klik tombol pengguna</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>document.getElementById()</code></td><td>Cara JavaScript mencari dan memilih elemen HTML di halaman</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>.innerText</code></td><td>Mengubah teks suatu elemen HTML secara dinamis lewat JS</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>.classList.toggle()</code></td><td>Menghidupkan/mematikan kelas CSS (dasar membuat fitur Mode Gelap)</td></tr>
+                <tr style="background: #fffbeb;"><td><span class="cheat-badge cheat-js">JS</span></td><td><code>if...else</code></td><td>Mengambil keputusan logis berdasarkan kondisi (benar atau salah)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pesan Motivasi & Aksi -->
+        <div class="motivation-quote-card">
+          <span class="quote-symbol">💬</span>
+          <blockquote class="quote-text">
+            “Gunakan <strong>HTML</strong> untuk menyusun struktur, percantik dengan <strong>CSS</strong>, dan buat hidup dengan <strong>JavaScript</strong>!”
+          </blockquote>
+          <div class="quote-action">
+            <button class="btn btn-primary" onclick="navigateTo('materi')">
+              📚 Buka Modul Materi
+            </button>
+            <button class="btn btn-secondary" onclick="navigateTo('editor')">
+              💻 Praktik di Editor Kode
+            </button>
+            <button class="btn btn-outline" onclick="window.print()">
+              🖨️ Cetak Rangkuman
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       FOOTER APLIKASI
+       ======================================================================== -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <div class="footer-logo">🌐 HTML, CSS &amp; JavaScript Dasar</div>
+        <p class="footer-desc">Media Pembelajaran Digital Interaktif Mata Pelajaran Informatika SMP/MTs (Kelas VIII/IX).</p>
+      </div>
+      <div class="footer-meta-col">
+        <div class="footer-badge">Informatika SMP/MTs</div>
+        <p class="footer-copy">&copy; Media Pembelajaran Interaktif. Siap ditampilkan di proyektor kelas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Pop-up -->
+  <div id="appToast" class="toast-popup" style="display:none;"></div>
+
+  <!-- File JavaScript Eksternal Wajib -->
+  <script src="script.js"></script>
+</body>
+</html>
